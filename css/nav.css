@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+.nav{
+	position: fixed;
+	top: 0px;
+	left:0px;
+	z-index: 4;
+}
+
+.nav_wrapper{
+	/* 최소 너비 */
+	min-width: 200px;
+	min-height:100vh;
+	background-color: #f0f0f0;
+	padding-top: 100px;
+	list-style-type: none;
+}
+
+.nav_wrapper li {
+	display: flex;
+	padding: 10px 16px;
+}
+
+.nav_wrapper li:hover{
+	background-color: white;
+}
+
+.nav_icon{
+	border: none;
+	background-color: transparent;
+	font-size: 2em;
+}
+
+.nav_menu{
+	border: none;
+	background-color: transparent;
+	font-size: 1.5em;
+}
+
+/* 800px 이하이면 메뉴항목 글자가 사라진다. */
+@media screen and (max-width:800px){
+	.nav_menu{display: none;}
+	.nav_wrapper{min-width: 50px;}
+}
+/* 460px 이하이면 하트도 사라진다. */
+@media screen and (max-width:460px){
+	/* .nav_icon{display: none;} */
+	.nav_wrapper{display: none;}
+}

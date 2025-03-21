@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+.header{
+	/* 상단에 고정 */
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%; 
+	background-color: white;
+	/* 다른 영역보다 위 에 존재한다. */
+	z-index: 5 ;	
+}
+
+.header_wrapper{
+	display: flex;
+	/* 주축 정렬*/
+	justify-content:space-between;
+	/* 교차축 정렬 */
+	align-items:center;
+	height: 60px;
+	padding: 0px 16px;
+}
+
+.header_start{
+	height: 40px;
+	line-height: 40px;
+}
+
+.header_hamburger{
+	border: none;
+	font-size: 1.5em;
+	/* 버튼 배경을 투명하게 */
+	background-color: transparent;
+}
+.header_title{
+	font-size: 1.5em;
+}
+
+.header_center{
+	width: 50%;
+}
+
+.header_form{
+	display: flex;
+	max-width: 100%;
+}
+
+.header_input_text{
+	/* 계산해주는 함수 */
+	width: calc(100% - 60px);
+	height: 40px;
+	border: 1px solid #8f8f8f;
+	border-right: none;
+	border-radius: 10px 0 0 10px;
+}
+
+.header_input_button{
+	width: 60px;
+	height: 40px;
+	border: 1px solid #8f8f8f;
+	border-left: none;
+	border-radius: 0px 10px 10px 0px;
+}
+
+.header_end{
+	display: flex;
+}
+
+.header_search{
+	display: none;
+	border: none;
+	background-color: transparent;
+	font-size: 1.5em;
+}
+.header_profile{
+	width: 40px; /* width랑 height써줘야 사진이 등장하는듯? */
+	height: 40px;
+	background-image:url('../images/profile-m.png');
+	background-size: 40px 40px;
+}
+
+/* 800px 이하이면 NohTube 글자가 사라진다. */
+@media screen and (max-width:800px){
+	.header_title{display: none;}
+}
+/* 460px 이하이면 검색창 없어지고 검색버튼이 나타난다. */
+@media screen and (max-width:460px){
+	.header_center{display: none;}
+	.header_search{display: block;}
+}
+

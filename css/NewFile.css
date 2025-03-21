@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;	
+}
+
+
+body{
+	
+	
+	background: lightgray;
+}
+h1{
+	text-align: center;
+}
+
+/* .row{
+	display:flex; row에다가 해야한다**
+	flex-direction: row;
+	justify-content: center;
+} */
+
+
+.card{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+	margin: 20px;
+}
+
+.column{
+	width: 90%;
+	margin: 0px auto;
+	
+}
+
+@media screen and (min-width: 1024px){
+	
+	 .row{
+	display:flex; 
+
+	} 
+	.column{
+		flex: 0 0 33.33%;  /* 0 -> 기본 크기 유지(자동확장X), 0-> 수축도 하지 않음 */
+		max-width: 33.33%; /* 최대너비가 33.33%이다. */
+		padding: 0 1em;
+	}
+	
+	
+}

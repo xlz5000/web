@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+.nav{
+	
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index:4;
+}
+
+.nav_wrapper{
+	background-color: gray;
+	min-width: 200px;
+	min-height: 100vh;
+	padding-top: 100px;
+	list-style-type: none;
+}
+.nav_icon{
+	border: none;
+	background-color: transparent;
+	
+}
+
+
