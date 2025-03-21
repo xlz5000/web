@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열정렬</title>
+<script type="text/javascript">
+//1. 오름차순(숫자)
+
+let numbers = [40,10,30,20,50];
+numbers.sort((a, b) => a-b);
+console.log(numbers);
+
+
+let numbers2 = [40,10,30,20,50];
+// 오름 차순 (문자열)
+numbers2.sort(); //[10, 27, 400, 5, 50]
+console.log(numbers2);
+
+
+let numbers3 = [400, 10, 5, 27, 50];
+// 2. 내림차순(숫자)
+numbers3.sort((a, b) => b-a);
+console.log(numbers3);
+
+
+
+// 문자열의 오름차순과 내림차순
+let str=["apple", "banana", "cherry", "avoCado"];
+// 문자열 오름차순
+str.sort();
+console.log(str);
+
+
+let str2=["apple", "banana", "cherry", "avoCado"];
+// 문자열 오름차순
+str2.sort().reverse();
+console.log(str2);
+
+
+
+
+</script>
+
+
+</head>
+<body>
+
+</body>
+</html>

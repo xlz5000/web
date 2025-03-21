@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 :클릭</title>
+<style type="text/css">
+a:link{
+color:lightgray;
+
+}
+a:visited{
+color:lightgray;
+
+}
+a:active{
+color:lightgray;
+
+}
+
+#myid{
+	 font-size: 3em;
+	 text-decoration:none;
+
+}
+
+#box{
+width: 200px;
+height: 200px;
+background-color: tomato;
+
+}
+
+
+
+</style>
+
+<!-- 
+
+defer :비 동기적으로 실행되도록 지정
+	해당 페이지 완전히 로드 된 후 실행하자
+
+ -->
+<script defer src="../js/ex04.js"></script>
+</head>
+<body>
+
+	<a href ="https://www.naver.com" onclick="go_alert()">클릭</a><br>
+	<a href="https://www.naver.com" id="myid">클릭</a>
+	<div id="box"></div>
+
+
+<script type="text/javascript">
+function go_alert(){
+	alert("네비어로 이동합니다.")
+	
+	
+	
+}</script>
+</body>
+</html>

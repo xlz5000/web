@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자</title>
+<style type="text/css">
+*{
+margin: 0; padding : 0
+}
+
+#a{
+color:blue;
+}
+
+.b{
+
+color: tomato;
+}
+
+p{
+color:green;
+}
+
+
+/* id 와 class 가 겹쳤을 경우 */
+#d{
+background-color: red;
+font-size: 100px;
+}
+
+.c{
+background-color:pink;
+color:white;
+}
+
+</style>
+</head>
+<body>
+
+
+<!-- 
+	1. * => 전체 선택자 - 모든 요소 선택
+			웹 브라우저의 기본 스타일을 초기화 할 때 사용
+			* { margin:0; padding:0;}
+	2. 아이디 => id속성을 가진 하나의 요소만 선택
+		#아이디{속성: 속성값}
+		
+	3. 클래스 =>  class 속성을 가진 여러개의 요소를 선택
+		.클래스이름{속성: 속성값}
+	
+		
+ -->
+ 
+ 
+ <h1 id="d" class="c" style="font-size: 30px; background-color:lightgray">hello</h1>
+ <p class="b"> 한국 ICT 인재 개발원</p>
+ <p class="b"> 한국 ICT 인재 개발원</p>
+ <p id="a"> 한국 ICT 인재 개발원</p>
+ <p class="b"> 한국 ICT 인재 개발원</p>
+ <p> 한국 ICT 인재 개발원</p>
+ 
+
+</body>
+</html>

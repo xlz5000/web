@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트</title>
+<style type="text/css">
+
+	a:link, a:visited{
+	color: #222;
+	text-decoration: none;
+	
+	}
+	ul{
+		list-style-type: none;
+		width: 500px;
+		margin: 10px auto;
+		padding: 0;
+	}
+	
+	li{
+	display: inline-block;
+	width: 120px;
+	border: 1px solid black;
+	text-align: center;
+	padding: 10px 15px;
+	font-size: 16px;
+	
+	}
+	
+	#result1{
+	width: 500px;
+	height: 300px;
+	margin: 10px auto;
+	border: 1px solid #ccc;
+	border-radius: 15px;
+	}
+
+</style>
+</head>
+<body>
+	<ul>
+		<li><a href="#" onclick="bg_green()">Green</a></li>
+		<li><a href="#" onclick="bg_orange()">Orange</a></li>
+		<li><a href="#" onclick="bg_purple()">Purple</a></li>
+	</ul>
+	<div id="result1"></div>
+	<div id="result1"></div>
+	
+	<script type="text/javascript">
+	function bg_green(){
+		//현재문서에서 jd가 result1인 요소 선택(첫번째 요소만)
+		let result = document.querySelector("#result1");
+		
+		//자바스크립트에서 CSS 적용하기
+		result.style.backgroundColor="green";
+	}
+	function bg_orange(){
+		//현재문서에서 jd가 result1인 요소 선택(첫번째 요소만)
+		let result = document.getElementById("result1")
+		// 자바스크립트에서 CSS 적용하기
+		result.style.backgroundColor= "orange";
+		
+	}
+	function bg_purple(){
+		// 결과가 querySelector, getElementByID다르게 요소가 아니라
+		//NodeList로 나온다
+		let result = document.querySelectAll("#result1");
+		// 결과가 NodeList이므로 여러개 라고 가정하고 forEach사용
+/* 		result.forEach(k =>{
+			k.style.backgroundColor = "purple";
+		}); */
+		result[0].style.backgroundColor="purple";
+		
+		
+	}
+
+	
+	</script>
+</body>
+</html>

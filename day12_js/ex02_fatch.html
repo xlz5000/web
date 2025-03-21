@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fatch-외부데이터가져오기(json)</title>
+</head>
+<body> 
+
+
+<button id="btn">불러오기(json)</button>
+ <div id="log"></div>
+ 
+ <script type="text/javascript">
+ 
+ const btn = document.querySelector("#btn");
+ const log = document.querySelector("#log");
+ 
+ 
+ btn.addEventListener("click", (e)=>{
+	 fetch("https://jsonplaceholder.typicode.com/todos?_limit=5")
+	 .then(response => response.json()) // JSON형식으로 변환
+	 .then(json =>{	
+/*  	const data = json.map(item=>`<p>${item.id}, ${item.title}</p>`).join('');
+ 	 	log.innerHTML = data; */
+  	 	log.innerHTML = '';
+ 	 	json.forEach(item =>{
+ 	 		log.innerHTML += `<p>${item.id}, ${item.title}</p>`;
+ 	 	}); 
+ 	 	
+
+	})
+	 .catch(error=>{
+		 
+		 log.innerHTML ='데이터를 불러오는 도중 오류 발생';
+	 })
+ })
+/*  btn.addEventListener("click", (e)=>{
+	 fetch("https://jsonplaceholder.typicode.com/todos?_limit=5")
+	 .then(response => response.json()) // JSON형식으로 변환
+	 .then(json =>{
+		 //const data = json.forEach(item =>{console.log(item)}) 
+	 
+	 // 자겨온 데이터 중에 3보다 큰 데이터만 data 변수에 넣자
+	 const data = json.filter(item =>item.id > 3);
+	 log.innerHTML = ''; //초기화
+	 data.forEach(item => {
+		 log.innerHTML += `<p>${item.id}, ${item.title}</p>`
+	 })
+	})
+	 .catch(error=>{
+		 
+		 log.innerHTML ='데이터를 불러오는 도중 오류 발생';
+	 });
+   
+ })*/
+ 
+ 
+ 
+ </script>
+
+</body>
+</html>

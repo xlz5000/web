@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>마진중첩(마진상쇄)</title>
+<style type="text/css">
+div{
+width: 200px;
+height: 100px;
+margin: 30px;
+
+}
+
+
+.box1{background:blue;}
+.box2{background:red;padding: 1px;}
+.box3{background:green;}
+
+
+/*
+	box1, box2, box3의 마진 상쇄되어 box간의 간격이 60px => 30px;
+	마진 상쇄 : 블록의 top 및 bottom 마진은 때로는 가장 큰 한 마진으로 결합, 상쇄 될 수 있다.
+	1. 인접 형제의 박스 간 상하 마진이 겹칠 때 (현 예제)
+	2. 빈 요소의 상하 마진이 겹칠 때 (현 예제)
+		** 빈 요소 : 높이가 0인 상태의 블록 요소
+	3. 부모박스와 첫번째 (마지막) 자식 박스의 상단(하단)의 마진이 겹칠 때
+		자식박스의 마진과는 상관없이 상쇄된 마진은 부모 박스의 바깥으로만 렌더링된다.
+		
+	마진 상쇄 예외
+	1.position: absolute
+	2. float : left/right
+	3. display: flex;
+	4. display: grid
+
+*/
+</style>
+</head>
+<body>
+
+	<div class="box1">box1</div>
+	<div class="box2">box2</div>
+	<div class="box3">box3</div>
+
+</body>
+</html>

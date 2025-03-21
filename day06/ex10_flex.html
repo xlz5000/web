@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>플레스 박스 레이아웃</title>
+<style type="text/css">
+/*  플렉스 박스 레이아웃은 기본적으로 웹 요소를 가로 배치하다가 화면에 가득차면
+    아래로 내려서 다시 옆으로 배치하는 방식이다.
+    이때 배칙 방향을 세로로 바꿀수도 있고, 정렬방법도 지정할 수 있다.
+    1. 플렉스 컨테이너 : 부모 (자식(item)을 가지고 있음)
+    2. 플렉스 항목 : 자식
+    3. 주축
+    4. 교차축
+    
+    1. 플렉스 컨네이너 지정 : display:flex | inline-flex
+      flex => 컨테이너를 블록레벨로 만든다.
+      inline-flex => 컨테이너를 인라인 레벨로 만든다.
+      
+    2. 플렉스 항목 배치 (주축과 방향 지정) : flex-direction
+      - row : 주축이 가로로 지정, 왼쪽 -> 오른쪽 (기본)
+      - row-reverse : 주축이 가로로 지정, 오른쪽 -> 왼쪽
+      - column : 주축이 세로로 지정,  위 -> 아래
+      - column-reverse: 주축이 세로로 지정,  아래->위
+      
+      flexbox가 가능한  한 요소 크기를 줄여서 한줄에 맞추려고 한다.(자동)
+      더 이상 모든 요소를 줄여도 한 줄에 맞출 수 없는 상태가 되면 
+      강제로 줄을 변경하던가, 그대로 범위를 벗어난다.
+  */
+  
+  .container{
+  	width: 700px;
+  	display: flex; /* 플렉스 컨네이너 지정 (부모지정) */  
+  	/* flex-wrap:wrap; */ /* 자식항목이 부모보다 크면 줄변경하자  */
+  	background-color: #eee;
+  	border: 1px solid #222;
+  	margin: 20px;
+   }
+  .box{
+  	width: 80px;
+  	padding: 5px 45px;
+  	margin: 5px;
+  }
+  p{
+  	text-align: center;
+  	font-weight: bold;
+  }
+  
+  .box:nth-child(odd) {
+	background-color: orange;
+  }
+   
+  .box:nth-child(even) {
+	background-color: green;
+  }
+  
+  #opt5{
+  	flex-wrap: wrap;
+  }
+  #opt6{
+  	flex-wrap: wrap-reverse;
+  }
+</style>
+</head>
+<body>
+	<div class="container" id="opt1">
+		<div class="box"><p>1</p></div>
+		<div class="box"><p>2</p></div>
+		<div class="box"><p>3</p></div>
+	</div>
+	<div class="container" id="opt2">
+		<div class="box"><p>1</p></div>
+		<div class="box"><p>2</p></div>
+		<div class="box"><p>3</p></div>
+		<div class="box"><p>4</p></div>
+	</div>
+	<div class="container" id="opt3">
+		<div class="box"><p>1</p></div>
+		<div class="box"><p>2</p></div>
+		<div class="box"><p>3</p></div>
+		<div class="box"><p>4</p></div>
+		<div class="box"><p>5</p></div>
+	</div>
+	<div class="container" id="opt4">
+		<div class="box"><p>1</p></div>
+		<div class="box"><p>2</p></div>
+		<div class="box"><p>3</p></div>
+		<div class="box"><p>4</p></div>
+		<div class="box"><p>5</p></div>
+		<div class="box"><p>7</p></div>
+		<div class="box"><p>7</p></div>
+	</div>
+	<div class="container" id="opt5">
+		<div class="box"><p>1</p></div>
+		<div class="box"><p>2</p></div>
+		<div class="box"><p>3</p></div>
+		<div class="box"><p>4</p></div>
+		<div class="box"><p>5</p></div>
+		<div class="box"><p>6</p></div>
+		<div class="box"><p>7</p></div>
+	</div>
+	<div class="container" id="opt6">
+		<div class="box"><p>1</p></div>
+		<div class="box"><p>2</p></div>
+		<div class="box"><p>3</p></div>
+		<div class="box"><p>4</p></div>
+		<div class="box"><p>5</p></div>
+		<div class="box"><p>6</p></div>
+		<div class="box"><p>7</p></div>
+	</div>
+</body>
+</html>
+

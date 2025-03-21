@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>비동기 작업</title>
+</head>
+<body>
+<script type="text/javascript">
+// prompt 에서 hello 받으면 성공, 아니면 실패
+const myPromise = new Promise((resolve, reject) => {
+	setTimeout(() => {
+		const msg = prompt("hello를 입력해 주세요");
+		if(msg ==='hello'){
+			resolve("정확하게 입력했습니다.");
+		}else{
+			
+			reject("틀리게 입력했습니다.");
+		}
+	}, 2000);
+	
+});
+
+
+	myPromise
+	.then((msg) => {
+		console.log(`결과 : ${msg}`);
+		
+	})
+	.catch((msg) => {
+		console.log(`결과 : ${msg}`);
+	})
+	.finally((msg) =>{
+		console.log("수고하셨습니다.");
+		
+	})
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내장 객체: Number</title>
+<script type="text/javascript">
+
+	let s1 = 10;
+	let s2 = 6;
+	document.write((s1+s2) + "<br>");
+	document.write((s1-s2) + "<br>");
+	document.write((s1*s2) + "<br>");
+	document.write((s1/s2).toFixed(1) + "<br>");
+	document.write(Math.floor((s1/s2)*10) /10 + "<br>");
+	document.write((s1%s2) + "<br>");
+	document.write("<hr>");
+	
+	
+	
+	s1 = "10";
+	s2 = "6";
+	document.write((s1+s2) + "<br>"); // 계산 x, 문자연결자
+	document.write((s1-s2) + "<br>");
+	document.write((s1*s2) + "<br>");
+	document.write((s1/s2).toFixed(1) + "<br>");
+	document.write(Math.floor((s1/s2)*10) /10 + "<br>");
+	document.write((s1%s2) + "<br>");
+	document.write("<hr>");
+	
+	
+	s1 = 10;
+	s2 = "6";
+	document.write((s1+s2) + "<br>"); // 계산 x, 문자연결자
+	document.write((s1-s2) + "<br>");
+	document.write((s1*s2) + "<br>");
+	document.write((s1/s2).toFixed(1) + "<br>");
+	document.write(Math.floor((s1/s2)*10) /10 + "<br>");
+	document.write((s1%s2) + "<br>");
+	document.write("<hr>");
+	
+	
+	
+	document.write(Number(true) + 10 + "<br>"); // 11
+	document.write(Number(false) + "<br>"); // 10
+	document.write(Number("10") + 10 + "<br>"); // 20
+	document.write(Number("10.524") + 10 + "<br>"); // 20.524
+	document.write(Number("10A") + 10  + "<br>"); //NaN
+	document.write(Number("A10") + 10  + "<br>");//NaN
+	document.write(Number("hello") + 10  + "<br>");//NaN
+	document.write(Number("  10  ") + 10  + "<br>");//20
+	document.write("<hr>");
+	
+	
+	document.write(parseInt(true) + 10 + "<br>"); //NaN
+	document.write(parseInt(false) + "<br>"); //NaN
+	document.write(parseInt("10") + 10 + "<br>"); // 20
+	document.write(parseInt("10.524") + 10 + "<br>"); // 20
+	document.write(parseFloat("10.524") + 10 + "<br>"); // 20.524
+	document.write(parseInt("10A") + 10  + "<br>"); //20=> 숫자로 시작한느 형태라면 문자가 나올때까지는 인정해준다;number와의 차이점
+	document.write(parseInt("A10") + 10  + "<br>");//NaN
+	document.write(parseInt("hello") + 10  + "<br>");//NaN
+	document.write(parseInt("  10  ") + 10  + "<br>");//20
+	document.write("<hr>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

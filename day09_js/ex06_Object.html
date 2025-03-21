@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내장 객체:  Math </title>
+</head>
+<body>
+
+<div>
+	<h1>당첨자 발표</h1>
+	<p>전체 응모자 수 : <span id="su"></span>명</p>
+	<p>당첨자 번호 : <span id="su2"></span>번</p>
+	<script type="text/javascript">
+	//ceil : 올림
+	// round : 반올림
+	// floor : 버림
+	// random : 랜덤
+	// max : 최대값
+	// min :  최소값
+	
+	// prompt에서 받은 숫자를 Number만들 때 parseInt()를 사용
+	let su = parseInt(prompt("전체 응모자 수: ", 100));
+	if(su >0 && !isNaN(su)){
+		document.querySelector("#su").innerText = su;
+		//document.querySelector("#su2").innerHTML = `<h2>${su}</h2>`;
+		
+		
+		let winner = Math.floor(Math.random()* su) + 1;
+		//document.querySelector("#su2").innerHTML = `<h2>${su}</h2>`;
+		document.querySelector("#su2").innerHTML = `${winner}`;
+		
+		
+	}else{
+		
+		alet("올바른 숫자를 입력하세요")
+	}
+
+	</script>
+
+</div>
+
+</body>
+</html>

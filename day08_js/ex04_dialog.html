@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dialog: 대화상자</title>
+<script type="text/javascript">
+// 자바 스크립트에서 대화상자는 3가지
+// 1. 경고창 => alert(); => 사용자에게 정보를 알리는 창, 리턴값이 없다.
+// 2. 확인창 => confirm(); => 사용자에게 정보를 알리는 창, 리턴값이 있음.
+
+// 				리턴값 : 확인(true), 취소(false)
+// 3. 입력창 =>  prompt() => 사용자에게 정보를 받는 값, 리턴값이 있음
+//							일반적으로 정보를 받을 때 form 태그를 사용한다.
+
+
+// 경고창
+
+// alert("안녕하세요\n Hello~~");
+
+
+</script>
+</head>
+<body>
+	<h1>본문내용</h1>
+
+<script type="text/javascript">
+// alert("안녕하세요\nHello~~");
+// let msg = confirm("삭제할까요?");
+// console.log("msg=" + msg);
+
+//let msg = prompt("나이 입력 : "); // 취소를 누르면 null
+let msg = prompt("나이 입력 : ", 19);
+
+console.log("나이는 " + msg);
+
+</script>
+</body>
+</html>

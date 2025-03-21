@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery-each</title>
+
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<p> 이것은 문단 -1 태그입니다 </p>
+<p> 이것은 문단 -2 태그입니다 </p>
+<p> 이것은 문단 -3 태그입니다 </p>
+<p> 이것은 문단 -4 태그입니다 </p>
+<p> 이것은 문단 -5 태그입니다 </p>
+
+<div id ="result"></div>
+<button id="btn1">클릭1</button>
+<button id="btn2">클릭2</button>
+
+<script type="text/javascript">
+// each : 반복처리
+// each(function(index,value) {실행}) => 배열
+// each(function(index,value) {실행}) => 객체
+// each(배열, 콜백함수)
+
+
+
+// 모든 p태그에 id속성을 부여 했다.
+/*  $("p").each(function(index, value){
+	$(this).attr("id", "para-" + index);
+	
+});  */
+
+$("p").each(function(index, value){
+	$(this).attr("id", "para-" + index);
+});
+
+
+// 모든 p태그에 id속성을 부여 했다.
+/*  $.each($("p"), function(index, value){
+$(this).attr("id", "ict-" + index);
+}); 
+ */
+
+$("#btn1").on("click", function(){
+	// js : textContent, innerText
+	// jQuery : text() -> get, text("내용") -> set
+	alert($("#para-3").text());
+})
+
+
+$("#btn2").on("click", function(){
+	// js : textContent, innerText
+	// jQuery : text() -> get, text("내용") -> set
+	$("#result").text("<h2>Hello jQuery</h2>");
+	$("#result").html("<h2>Hello jQuery</h2>");
+})
+
+
+</script>
+
+</body>
+</html>

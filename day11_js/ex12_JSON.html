@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSON</title>
+</head>
+<body>
+
+<!--
+	- 네트워크에서 데이터를 송수신하고 싶을때
+	- 데이터를 정의하고 싶을 때
+	
+	1. 학생이 40명인 4학년 C반 정보
+	
+	{
+	"이름" :데이터
+	}
+	
+	1. 학생이 20명인 4학년 C반 정보
+	{
+	"students" : 20,
+	"grade" : 4,
+	"name" : "C반"
+	}
+	
+	2. A학교의 정보가 20명의 4학년 C반, 15명, 2학년 B반
+	
+	{"name" : "A학년"
+	"classes":	[{
+				"students" : 20,
+				"grade" : 4,
+				"name" : "C반"
+				},
+				{
+				"students" : 15,
+				"grade" : 2,
+				"name" : "B반"
+				}]
+	}	
+	
+	----------------------------------
+	JSON.parse(문자열) : JSON 형식의 문자열을 JSON 객체로 변환
+	JSON.stringify(객체) :객체를 JSON 문자열로 변환
+-->
+<script type="text/javascript">
+// JSON 형식의 문자열
+const jsonString = '{"student": 20, "grade": 4, "name" : "C반"}';
+const data  = JSON.parse(jsonString);
+
+console.log("타입 : " + typeof data);
+console.log(`data : ${data}`);
+console.log(`반 : ${data.name}`);
+console.log(`학년 : ${data.grade}`);
+console.log(`학년 : ${data["grade"]}`);
+console.log(`학생수 : ${data.student}`);
+
+
+//객체를 JSON 문자열로 변환
+const jsonString2 = JSON.stringify(data);
+console.log(" 타입 : " + typeof jsonString2);
+console.log(jsonString2);
+
+
+
+</script>
+</body>
+</html>

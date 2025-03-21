@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열(Array)</title>
+<script type="text/javascript">
+	// 배열 : 크기를 정하지 않아도 된다.
+	//		모든 자료형을 담을 수 있다.
+
+	// 배열 생성
+	let arr = new Array();
+	arr[0] = 10;
+	arr[1] = true;
+	arr[2] = "A";
+	arr[3] = "인재개발원";
+	arr[4] = 3.14;
+
+	console.log("arr= " + arr);
+	document.write("<hr>");
+
+	// 하나씩 화면에 출력
+	for (var i = 0; i < arr.length; i++) {
+		document.write(arr[i] + "<br>");
+	}
+
+	document.write("<hr>");
+
+	for ( var k in arr) {
+		document.write(arr[k] + "<br>");
+
+	}
+	
+	document.write("<hr>");
+	
+	// 배열 생성 방법2
+	let arr2=['포도', 15, false, 'K', 78.9];
+	for ( var k in arr2) {
+		document.write(arr2[k] + "<br>");
+		
+	}
+	document.write("<hr>");
+	
+	// 방법3(문자열로 배열 만들기)
+	let myData = "java, js, html, js, 10, false, spring, 14.2";
+	
+	let myArr = myData.split(",");
+	for ( var k in myArr) {
+		document.write(myArr[k] + "<br>");
+		
+	}
+	document.write("<hr>");
+	
+	let myArr2 = ['포도', 15, false];
+	
+	//배열 끝에 추가 : push();
+	myArr2.push("딸기");
+	myArr2.push(124.7);
+	
+	document.write(myArr2);
+	
+	document.write("<hr>");
+	
+	//배열 앞에 추가:unshift()
+	myArr2.unshift("바나나");
+	myArr2.unshift(1.75);
+	document.write(myArr2);
+	
+	
+	// 배열 마지막 요소 삭제 :pop();
+	myArr2.pop();
+	document.write(myArr2);
+	document.write("<hr>");
+	
+	
+	// 배열 맨 처음 요소 삭제 :shift()
+	myArr2.shift();
+	document.write(myArr2);
+	document.write("<hr>");
+	
+	
+	
+	// 배열 특정요소 찾기: indexOf(찾은 문자|숫자)
+	// 있으면 해당 위치값, 없으면 -1 반환
+	
+	let index = myArr2.indexOf(150);
+	console.log("index: " + index);
+	if(index != -1){
+	// 배열 특정요소 삭제 : splice(인덱스, 갯수)
+	myArr2.splice(index, 2);
+	
+	}
+	
+	document.write(myArr2);
+	documnet.write("<hr>")
+	
+	
+</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>

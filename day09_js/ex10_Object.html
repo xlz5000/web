@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체 : 사용자 정의 객체</title>
+<script type="text/javascript">
+// 1. 객체 리터럴을 사용한 사용자 정의 객체
+let person = {
+		name :"John",
+		age: 30,
+		greet: function(){
+			//자바스크립트에서 this란 현재 실행중인 함수가 속한 객체를 참조하는 역할
+			// 자바스크립트에서 this란 호출할때 해당 this가 결정된다.
+			// 호출할 객체를 지칭하는 예약어(호출할때 마다 다를 수 있다.)
+			document.write("Hello, my name is " + this.name + "<br>");
+			document.write(`Hello, my name is ${this.age}`);
+		}	
+}
+
+	document.write(`<p>이름: ${person.name}</p>`);
+	document.write(`<p>나이: ${person.age}</p>`);
+	person.greet();
+	document.write("<hr>")
+	
+	
+	let obj = {
+		name : "차범근",
+		age: 62,
+		sound : function(){
+			
+			return "대한 민국 파이팅";
+		},
+	
+	prn :function(){
+		
+		
+		return this.name + ", " + this.age + ", "  +this.sound();
+	}
+		
+}
+	
+//	document.write(`<p>이름: ${obj.name}</p>`);
+//	document.write(`<p>나이: ${obj.age}</p>`);
+	
+	
+	document.write(`<p>이름: ${obj.name}</p>`);
+	document.write(`<p>나이: ${obj.age}</p>`);
+	
+	document.write(`<p>이름: ${obj["name"]}</p>`);
+	document.write(`<p>나이: ${obj["age"]}</p>`);
+	
+	document.write(`<p>나이: ${obj.sound()}</p>`);
+	document.write(`<p>나이: ${obj.prn()}</p>`);
+	document.write(`<p>나이: ${obj["sound"]()}</p>`);
+	document.write(`<p>나이: ${obj["prn"]()}</p>`);
+	
+	let laptop={
+			brand:"Apple",
+			model : "MacBook pro",
+			specs : {
+				processor: "M1",
+				ram: "16GB"
+			},
+			getSpecs: function(){
+				
+				return `${this.brand} ${this.model} ${this.specs.processor}, ${this.specs.ram}`
+			}
+			
+	}
+	document.write(`${laptop.getSpecs()}`);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

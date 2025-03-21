@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>반복문 : for</title>
+</head>
+<body>
+<script type="text/javascript">
+/* 일반적인 for문
+ for(초기식; 조건식; 증감식){
+	 조건식이 참일때 실행할 문장;
+	 
+	 
+ }
+ for ( var 내부에서 사용할 변수(k) in 배열) {
+	 // 자바와 다르게 변수에는 index가 저장된다.
+	 실행할 문장;
+	
+} */
+
+
+// 1- 10까지 출력하기
+for (var i = 1; i <= 10; i++) {
+	document.write(i);
+}
+
+document.write("<hr>");
+
+// 5단 출력하기
+for (var i = 1; i <= 9; i++) {
+	document.write("5 * " + i + "=" + 5*i + "<br>");
+}
+
+document.write("<hr>");
+// 구구단 출력하기(다중 for문)
+
+for (var i = 2; i <= 9; i++) {
+	for (var j = 1; j <= 9; j++) {
+		document.write(i + "*" + j +"=" + i*j + "&nbsp;&nbsp;&nbsp;");
+	}
+	document.write("<br>")
+}
+
+
+
+</script>
+
+</body>
+</html>

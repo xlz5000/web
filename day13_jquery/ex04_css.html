@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	
+<style type="text/css">
+.fbold{
+	font-weight: bold;
+}
+
+.fblue{
+	color: blue;
+}
+
+.btomato{background-color: tomato;}
+
+div{
+width: 100px; height: 100px; border: 10px solid #222
+}
+
+</style>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>이것은 h1헤더 태그 입니다.</h1>
+     <h2>이것은 h2헤더 태그 입니다.</h2>
+     <p>이것은 문단-1 태그 입니다</p>
+     <p>이것은 문단-2 태그 입니다</p>
+     <p>이것은 문단-3 태그 입니다</p>
+     <div>이것은 영역 태그 입니다.</div>
+     <hr>
+     <button id="btn1">addClass</button>
+     <button id="btn2">removeClass</button>
+     <button id="btn3">toggleClass</button>
+     <button id="btn4">css</button>
+     <button id="btn5">css삭제</button>
+     <button id="btn6">attr</button>
+     <button id="btn7">removeAttr</button>
+     
+     <script type="text/javascript">
+     /*
+     	$("선택자").addClass("클래스이름") => 선택자가 선택한 요소에 클래스이름에 해당하는 스타일 적용
+     	$("선택자").removeClass("클래스이름") => 선택자가 선택한 요소에 클래스이름에 해당하는 스타일 제거
+     	$("선택자").toggleClass("클래스이름") => 선택자가 선택한 요소에 클래스이름에 해당하는 스타일 적용/제거
+     
+     	
+     	$("선택자").css("스타일속성", "값") => 선택자가 선택한 요소에 스타일 속성을 만들어서 적용
+     	$("선택자").css("스타일속성", "") => 선택자가 선택한 요소에 스타일 속성을 해제
+     	
+     	
+     	$("선택자").attr("태그 속성", "값") => 선택자가 선택한 요소에 태그 속성을 만들어서 적용
+     	$("선택자").removeAttr("태그 속성", "") => 선택자가 선택한 요소에 태그 속성을 해제
+     	
+     	
+     */
+     
+     $("#btn1").on("click", ()=> {
+    	 $("h1, h2").addClass("fblue");
+    	 $("p").addClass("btomato");
+    	 $("div").addClass("fblue btomato fbold");
+    	 
+     });
+     
+     $("#btn2").on("click", ()=> {
+    	 $("h1, h2").removeClass("fblue");
+    	 $("p").removeClass("btomato");
+    	 $("div").removeClass("fblue btomato fbold");
+
+    	 
+     });
+     
+     $("#btn3").on("click", ()=> {
+    	 $("h1, h2").toggleClass("fblue");
+    	 $("p").toggleClass("btomato");
+    	 $("div").toggleClass("fblue btomato fbold");
+    	 
+     });
+     
+     $("#btn4").on("click", ()=> {
+    	 $("h1, h2").css("color", "red");
+    	 $("p").css("background-color", "lightgray").css("color", "white");
+    	 $("div").css({"background-color":"lightgray", "color" : "white", "width":"200px", "height":"200px"}) 
+     });
+    	 
+     
+     $("#btn5").on("click", ()=> {
+    	 $("h1, h2").css("color", "red");
+    	 $("p").css("background-color", "lightgray").css("color", "white");
+    	 $("div").css({"background-color":"", "color" : "", "width":"", "height":""}) 
+    	 
+     });
+     
+     $("#btn6").on("click", ()=> {
+    	 $("h1, h2, p , div").attr("title", "이 요소는 수정 되었습니다.");
+
+    	 
+     });
+     
+     $("#btn7").on("click", ()=> {
+    	 $("h1, h2, p , div").removeAttr("title");
+    	 
+     });
+     
+     </script>
+
+</body>
+</html>

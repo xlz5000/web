@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연산자</title>
+<script type="text/javascript">
+let my_int = 5;
+let my_float = 6.667;
+
+// 타입 알아보기: typeof
+// 정수와 실수 모두 number 타입이다.
+console.log(typeof my_int);
+console.log(typeof my_float);
+
+// 실수 일때 고정된 소수점 자리수를 반올림 하려면 toFixed(자릿수) 메서드 사용
+let num1= 1.7666548;
+let res = num1.toFixed(3); // 소수점 3짜리까지 구하기
+console.log("res : " + res) // 1.767
+
+
+num1= 1.7666548; //1.766
+res = num1.toFixed(3); // 소수점 3짜리까지 구하기
+console.log("res : " + res) // 
+
+
+
+// 실수 일때 고정된 소수점 자리수를 버림 하려면 Math.floor(값*숫자) / 숫자 메서드 사용
+
+num1= 1.7666548; 
+res = Math.floor(num1 * 1000) / 1000; 
+console.log("res" + res)// 1.766
+
+// 실수 일때 고정된 소수점 자리수를 올림 하려면 Math.ceil(값*숫자) / 숫자 메서드 사용
+num1= 1.7666548; 
+res = Math.floor(num1 * 1000) / 1000; 
+console.log("res" + res)// 1.766
+
+
+// 문자를 숫자로 변경: Number("숫자형문자")
+// 자바스크립트의 변수는 모든 것을 다 받을 수 있다.
+num1 = "75";
+res = num1 + 5; // 문자열 + 숫자 = 문자열
+console.log("res : " + res) // 755
+console.log("res 타입 : " + typeof res)
+
+
+res = Number(num1) + 5;
+console.log("res : " + res) // 80
+console.log("res 타입 : " + typeof res)
+
+res = Number("dd") + 5; // NaN(Not a Number)
+//console.log("res : " + res) 
+//console.log("res 타입 : " + typeof res)
+
+
+
+let su1=7;
+let su2=3;
+document.write("<h2>산술 연산자(+,-,*,/,%)</h2>")
+document.write("<p>" + su1 + "+" + su2 + "="+ (su1+su2)+ "</p>");
+document.write("<p>" + su1 + "-" + su2 + "="+ (su1-su2)+ "</p>");
+document.write("<p>" + su1 + "*" + su2 + "="+ (su1*su2)+ "</p>");
+document.write("<p>" + su1 + "/" + su2 + "="+ Math.floor((su1/su2)*10)/10+ "</p>");
+document.write("<p>" + su1 + "%" + su2 + "="+ (su1%su2)+ "</p>");
+document.write("<hr>");
+
+
+document.write("<h2>증감연산자(++, --)</h2>")
+document.write("<p>" + ++su1 + "</p>");
+document.write("<p>" + --su1 + "</p>");
+document.write("<hr>");
+
+document.write("<h2>대입연산자(+=, -=, *=, /= )</h2>")
+document.write("<h3> (su1 +=3)=> " + (su1 +=3) + "</h3>");
+document.write("<hr>");
+
+
+document.write("<h2>대입연산자(>, >=, <, <=, ==, !=, ===, !==)</h2>")
+su1 = 7;
+su2 = 3;
+
+document.write("<h3>su1 >= su2 => " + (su1 >= su2) + "</h3>");
+document.write("<h3>su1 <= su2 => " + (su1 <= su2) + "</h3>");
+
+
+document.write("<h2>비교연산자 주의 상항</h2>")
+su1 = 1000;
+su2 = "1000";
+document.write("<h3>su1 == su2 => " + (su1 >= su2) + "</h3>"); // true
+document.write("<h3>su1 != su2 => " + (su1 <= su2) + "</h3>"); // false
+document.write("<hr>");
+
+// === 는 자료형과 데이터가 모두 일치할 때만 true가 된다
+document.write("<h3>su1 === su2 => " + (su1 >= su2) + "</h3>"); // false
+document.write("<h3>su1 !== su2 => " + (su1 <= su2) + "</h3>"); // true
+
+document.write("<hr>");
+
+
+su1 = true; // true 을 1 취급
+su2 = 1;
+document.write("<h3>su1 == su2 => " + (su1 >= su2) + "</h3>"); // true
+
+
+su1 = false; // false 을 0 취급
+su2 = 0;
+document.write("<h3>su1 == su2 => " + (su1 >= su2) + "</h3>"); // true
+document.write("<hr>");
+
+document.write("<h2>논리연산자(&&(AND), ||(OR), !(NOT))</h2>")
+su1 = true;
+su2 = false;
+
+document.write("<h3>su1 && su2 => " + (su1 && su2) + "</h3>"); // true
+document.write("<h3>su1 && su2 => " + (su1 && su2) + "</h3>"); // false
+document.write("<h3>su2 && su1 => " + (su2 && su1) + "</h3>"); // false
+document.write("<h3>su2 && su1 => " + (su2 && su1) + "</h3>"); // false
+document.write("<hr>");
+
+
+document.write("<h3>su1 || su2 => " + (su1 || su2) + "</h3>"); // true
+document.write("<h3>su1 || su2 => " + (su1 || su2) + "</h3>"); // true
+document.write("<h3>su2 || su1 => " + (su2 || su1) + "</h3>"); // true
+document.write("<h3>su2 || su1 => " + (su2 || su1) + "</h3>"); // false
+
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

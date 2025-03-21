@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM</title>
+</head>
+<body>
+
+<!-- 
+
+
+	innerText, innerHTML, textContent
+	1. textContent
+	: 요소 내부의 모든 텍스트를 가져오거나 설정 (get/set)
+	
+	2. innerText
+	: 요소의 보이는 텍스트만 가져오거나 설정할 때 사용(get/set)
+	: display :none, visibility: hidden 는 반환하지 않음
+	3. innerHTML
+	:요소 내부의 HTML 코드 전체를 가져오거나 설정(get/set)
+
+ -->
+		<p id="msg1">Hello World</p>
+		<p><span id="msg2">Welcome JS</span></p>
+		<p id="msg3" style="font-size: 32px; background-color:lightgray">서울시 마포구 신수동</p>
+		<hr>
+		<p id="res"></p>
+		<p id="res2"></p>
+		<hr>
+		
+		
+		<div id="test">
+			<p>Hello<span style="display:none;">방가방가</span>World</p>
+		
+		</div>
+		<div id="test2">
+			<p>Hello<b>Bold</b>World</p>
+		
+		</div>
+		
+		<script type="text/javascript">
+		//get
+		let str = document.querySelector("#msg1").textContent;
+		
+		//set
+		document.querySelector("#res").innerText = "<h2>" + str + "</h2>";
+		document.querySelector("#res2").innerHTML = "<h2>" + str + "</h2>";
+		
+		
+		//html 요소 변경
+		// 내용 변경 => .textContent, .innerTExt, .innerHTML
+		// 속성 변경 => .속성명
+		//style 변경 => .style.property
+		
+		
+		document.querySelector("#msg1").textContent = "KOREA SEOUL";
+		document.querySelector("#msg1").align = "center";
+		document.querySelector("#msg1").style.color = "tomato";
+		document.querySelector("#msg1").style.fontSize = "32px";
+		
+			
+		</script>
+		
+		<script type="text/javascript">
+		
+		let div = document.getElementById("test");
+		console.log(div.textContent); // Hello 방가방가 World
+		console.log("=========");
+		
+		console.log(div.innerText);// Hello World
+		console.log("=========");
+		
+		
+		
+		let div2 = document.getElementById("test2");
+		console.log(div2.textContent); // Hello Bold World
+		console.log("=========");
+		console.log(div2.innerText); // Hello Bold World
+		
+		
+		
+		
+		
+		
+		</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>플렉스 박스</title>
+<style type="text/css">
+
+	.container{
+		width: 300px;
+		height: 300px;
+		display: flex;
+		flex-direction: row;   /* 가로 */
+		flex-wrap: wrap;       /* 넘치면 줄 변경 */
+		background-color: #eee;
+		border: 1px solid #222;
+		margin: 30px;
+	}
+	
+	.box{
+		padding: 10px;
+		margin: 5px;
+		width: 80px;
+	}
+	.box:nth-child(odd) {
+	 background-color: orange;
+   }
+   .box:nth-child(even) {
+	background-color: green;
+   }
+   p{
+   	text-align: center;
+   	font-weight: bold;
+   }
+   
+   /* 여러 줄을 교차축 방향으로 정렬  (줄 단위) , flex-wrap: wrap 이 필요조건  */
+   #opt1{align-content: flex-start;}
+   #opt2{align-content: flex-end;}
+   #opt3{align-content: center;}
+   #opt4{align-content: space-between;}
+   #opt5{align-content: space-around;}
+   #opt6{align-content: stretch;}
+</style>
+</head>
+<body>
+	<div class="container" id="opt1">
+		<div class="box"><p>1</p></div>
+		<div class="box"><p>2</p></div>
+		<div class="box"><p>3</p></div>
+		<div class="box"><p>4</p></div>
+	</div>
+	<div class="container" id="opt2">
+		<div class="box"><p>1</p></div>
+		<div class="box"><p>2</p></div>
+		<div class="box"><p>3</p></div>
+		<div class="box"><p>4</p></div>
+	</div>
+	<div class="container" id="opt3">
+		<div class="box"><p>1</p></div>
+		<div class="box"><p>2</p></div>
+		<div class="box"><p>3</p></div>
+		<div class="box"><p>4</p></div>
+	</div>
+	<div class="container" id="opt4">
+		<div class="box"><p>1</p></div>
+		<div class="box"><p>2</p></div>
+		<div class="box"><p>3</p></div>
+		<div class="box"><p>4</p></div>
+	</div>
+	<div class="container" id="opt5">
+		<div class="box"><p>1</p></div>
+		<div class="box"><p>2</p></div>
+		<div class="box"><p>3</p></div>
+		<div class="box"><p>4</p></div>
+	</div>
+	<div class="container" id="opt6">
+		<div class="box"><p>1</p></div>
+		<div class="box"><p>2</p></div>
+		<div class="box"><p>3</p></div>
+		<div class="box"><p>4</p></div>
+	</div>
+</body>
+</html>

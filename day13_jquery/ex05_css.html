@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery-css</title>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style type="text/css">
+	div{
+		width: 60px;
+		height: 60px;
+		margin: 5px;
+		float:left; 
+	}
+
+
+</style>
+</head>
+<body>
+
+	<span id="result"></span>
+	<div style="background-color:blue"></div>
+	<div style="background-color:green"></div>
+	<div style="background-color:red"></div>
+	
+	
+	<script type="text/javascript">
+	 $("div").on("click", function(){
+		// 클릭한 요소의 css중 background-color를 추출해서 color 변수에 저장
+		let color = $(this).css("background-color");
+		document.querySelector("#result").innerHTML
+		= "<p style='color:" + color + "'>안녕!!!</p>";
+
+	 })
+	 
+	
+	
+	</script>
+
+</body>
+</html>

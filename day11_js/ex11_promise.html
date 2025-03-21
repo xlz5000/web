@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>비동기 - promise</title>
+</head>
+<body>
+<!-- 
+
+	병행처리 : 일괄시작 후 모든 처리가 끝나면 다음 작업을 시작하고 싶을 때 사용
+	Promise.all(배열) : 다수의 Promise 병행 실행, 반환 => Promise
+
+ -->
+ 
+ <script type="text/javascript">
+ 
+ const arrFunc = [];
+ for (let i = 0; i < 5; i++) {
+	const func = (resolve) => {
+		console.log(`처리시작 ${i} : `, new Date().toLocaleTimeString());
+		
+		//0~2초미만
+		const delay = 2000 * Math.random();
+		setTimeout(() => {
+			console.log(`처리완료 ${i} : `, new Date().toLocaleString());
+			resolve();
+		}, delay);
+		
+	};
+	
+	// 배열 저장
+	arrFunc.push(func);
+}
+ 
+ //console.log(arrFunc): 배열안 내용 확인
+ 
+ const arrPromise = arrFunc.map((item) => new Promise(item));
+ 
+ 
+ Promise.all(arrPromise)
+ .then(() => {
+	 console.log("모든 작업이 잘 끝났습니다.")
+	 //console.log("결과 : " +msg);
+ })
+ .catch(() => {
+	 console.log("오류 발생 했습니다.")
+ })
+ 
+ 
+ </script>
+</body>
+</html>

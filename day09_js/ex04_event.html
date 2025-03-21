@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트</title>
+<style type="text/css">
+
+	a:link, a:visited{
+	color: #222;
+	text-decoration: none;
+	
+	}
+	ul{
+		list-style-type: none;
+		width: 500px;
+		margin: 10px auto;
+		padding: 0;
+	}
+	
+	li{
+	display: inline-block;
+	width: 120px;
+	border: 1px solid black;
+	text-align: center;
+	padding: 10px 15px;
+	font-size: 16px;
+	
+	}
+	
+	#result1{
+	width: 500px;
+	height: 300px;
+	margin: 10px auto;
+	border: 1px solid #ccc;
+	border-radius: 15px;
+	}
+	.result2{
+	width: 500px;
+	height: 300px;
+	margin: 10px auto;
+	border: 1px solid #ccc;
+	border-radius: 15px;
+	}
+
+</style>
+</head>
+<body>
+	<ul>
+		<li><a href="#" onclick="changBg('green')">Green</a></li>
+		<li><a href="#" onclick="changBg('orange')">Orange</a></li>
+		<li><a href="#" onclick="changBg('purple')">Purple</a></li>
+	</ul>
+	<div id="result1"></div>
+	<div class="result2"></div>
+	
+	<script type="text/javascript">
+	function changBg(color){
+		let result1 = document.getElementById("result1");
+		// let result1 = document.querySelector('#result1');
+		result1.style.backgroundColor = color;
+		
+		let result2 = document.getElementsByClassName("result2");
+		//querySelectAll NodeList이므로 여러개 묶음으로 가정한다.
+		// let result2 = document.querySelectorAll('.result2');
+		
+		
+		result2[0].style.backgroundColor = color;
+		
+		
+		
+	}
+	
+	</script>
+</body>
+</html>

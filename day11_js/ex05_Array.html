@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Array</title>
+</head>
+<body>
+<script type="text/javascript">
+	 let numbers = ["one", "two", "three", "four"];
+	 
+	 // `${변수}`
+	 for (let i = 0; i < numbers.length; i++) {
+		document.write(`<p> ${numbers[i]}</p>`);
+	}
+	 
+	 document.write(`<hr>`);
+	 
+	 let nums = [1,2,3];
+	 let chars = ['a', 'b', 'c', 'd'];
+	 
+	 
+	 // 두개의 배열 합치기
+	 let numsChars = nums.concat(chars);
+	 document.write(`numChars = ${numsChars}<br>`);
+
+	 
+	 // 맨 뒤 추가(push) => 길이
+	 let ret1 = nums.push(4, 5);
+	 document.write(`nums= ${nums}<br>`)
+	 console.log(ret1);
+	 
+	 
+	 // 맨 앞 추가(unshift) => 길이
+	 let ret3 = nums.unshift(-101);
+	 document.write(`nums = ${nums}<br>`);
+	 console.log(ret3);
+	 
+	 // 맨 뒤 추출(pop) => 데이터 반환
+	 let ret2 = nums.pop();
+	 document.write(`nums= ${nums}<br>`);
+	 console.log(ret2);
+	 
+	 
+	 
+	 // 맨 앞 추출(shift) => 데이터 반환
+	 let ret4 = nums.shift();
+	 document.write(`nums = ${nums}<br>`);
+	 console.log(ret4);
+</script>
+</body>
+</html>

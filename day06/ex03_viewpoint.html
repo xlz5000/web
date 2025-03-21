@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- 너비를 디바이스(장치) 너비 기준으로 초기 화면 배율 지정 -->
+<!--  
+  <meta name="viewport" content="속성=값, 속성=값">
+  - width : device-width   => 장치의 너비 -> 기본(브라우저)
+  - height : device-height => 장치의 높이 -> 기본(브라우저)
+  - initial-scale : 초기 확대,축소값 (1-10) -> 기본(1=원 상태 유지)
+  - user-scalable : 확대/축소 가능 여부 (기본:yes)
+  
+  크기 설정
+  vw(viewport width) : 1vw는 뷰포트 너비의 1%와 같다.
+  vh(viewport height): 1vh는 뷰포트 높이의 1%와 같다.
+  vmin(viewport minimum) : 너비와 높이 중 작은 값의 1%와 같음
+  vmax(viewport maximum) : 너비와 높이 중 큰 값의 1%와 같음
+ -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>viewport</title>
+<style type="text/css">
+ * {
+ 	margin: 0px;
+ 	padding: 0px;
+ }
+ .wrap{
+ 	font-size: 24px;
+ }
+ .inner{
+ 	/* font-size: 2em; */ /* 부모크기 : 24px * 2 = 48 px */
+ 	font-size: 2rem;      /* html크기 : 16px * 2 = 32 px */
+ 	width: 200px;
+ 	height: 200px;
+ 	display: inline-block;
+ 	background-color: skyblue;
+ }
+ p{
+ 	/* font-size: 10vw ; */ /* 뷰 포트 너비의 10% */
+ 	font-size: 10vh ; /* 뷰 포트 너비의 10% */
+ }
+</style>
+</head>
+<body>
+	<h1>Hello World</h1>
+	<div class="wrap">
+		<div class="inner">고양이</div>
+		<div class="inner">강아지</div>
+	</div>
+	<p>한국 ICT 인재 개발원</p>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>플레스 박스 레이아웃</title>
+<style type="text/css">
+  
+  .container{
+  	width: 100%;
+  	height: 150px;
+  	display: flex; /* 플렉스 컨네이너 지정 (부모지정) */  
+  	justify-content: space-between;
+  	background-color: #eee;
+  	border: 1px solid #222;
+  	margin: 20px;
+   }
+  .box{
+  	width: 80px;
+  	padding: 5px 45px;
+  	margin: 5px;
+  }
+  p{
+  	text-align: center;
+  	font-weight: bold;
+  }
+  
+  .box:nth-child(odd) {
+	background-color: orange;
+  }
+   
+  .box:nth-child(even) {
+	background-color: green;
+  }
+
+  /* 교차축 정렬 : 
+   align-items : 교차축 방향으로 개별 아이템을 정렬함, display:flex 또는 display:grid 이 필요조건*/
+  #opt1{align-items: flex-start;} /* 교차죽의 시작점 */
+  #opt2{align-items: flex-end;}   /* 교차축의 끝점 */
+  #opt3{align-items: center;}     /* 교차죽의 중간 */
+  #opt4{align-items: baseline;}   /* 문자 기준에 맞춰 */
+  #opt5{align-items: stretch;}    /* 교차축에 가득 채우기  */
+</style>
+</head>
+<body>
+	<div class="container" id="opt1">
+		<div class="box"><p>1</p></div>
+		<div class="box"><p>2</p></div>
+		<div class="box"><p>3</p></div>
+	</div>
+	<div class="container" id="opt2">
+		<div class="box"><p>1</p></div>
+		<div class="box"><p>2</p></div>
+		<div class="box"><p>3</p></div>
+	</div>
+	<div class="container" id="opt3">
+		<div class="box"><p>1</p></div>
+		<div class="box"><p>2</p></div>
+		<div class="box"><p>3</p></div>
+	</div>
+	<div class="container" id="opt4">
+		<div class="box"><p>1</p></div>
+		<div class="box"><p style="font-size: 25px">2</p></div>
+		<div class="box"><p style="font-size: 10px">3</p></div>
+	</div>
+	<div class="container" id="opt5">
+		<div class="box"><p>1</p></div>
+		<div class="box"><p>2</p></div>
+		<div class="box"><p>3</p></div>
+	</div>
+</body>
+</html>

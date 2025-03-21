@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>요소 생성</title>
+</head>
+<body>
+	<!-- 
+
+	요소(Element=tag=Node)생성 => createElement("태그");
+	자식 요소 추가 : appendChild 
+	삽입 위치 지정 : insertBefore(삽입할 요소, 부모노드.childNodes[index])
+	해당요소 삭제 :remove
+	자식요소 삭제 : 부모노드.removeChild
+	지정된 노드의 부모를 반환 : parentNode
+
+-->
+
+
+	<div>
+
+		<h1>Web Programming</h1>
+		<p>공부할 주제를 기록해 보세요</p>
+		<form action="">
+			<label for="subject">주제 : </label>
+			<input type="text" id="subject" autofocus>
+			<button id="btnAdd">추가</button>
+		</form>
+		
+		<hr>
+		<ul id="itemList">
+		
+			<li>HTML</li>		
+			<li>CSS</li>		
+			<li>JavaScript</li>		
+		</ul>
+
+	</div>
+	<script type="text/javascript">
+	// 노드 :  DOM에서 요소(Element=태그)를 말한다.
+	// 노드리스트 :  노드를 여러개 저장한 데이터 형태(배열형식)
+	// 요소를 추가/삭제 할때 노드리스트를 사용한다.
+	
+	// 웹 페이지가 로딩되면 실행하자
+	document.addEventListener("DOMContentLoaded", ()=>{
+		const btn = document.querySelector("#btnAdd");
+		btn.addEventListener("click", (e) =>{
+			// form 태그를 사용해서 서버에 정보를 보내면 새로고침이 된다.
+			// 새로고침을 방지(기본동작을 방지)
+			e.preventDefault();
+			AddItem();
+		});
+		
+		// 항목을 클릭하면 삭제하자.
+		const itemList = document.querySelector("#itemList");
+		itemList.addEventListener("click", (e) => {
+			if(confirm("삭제할까요?")){
+				// e.target => 이벤트가 발생한 요소를 말한다.
+				e.target.remove();
+				
+		
+				
+			}
+			
+			
+		});
+	});
+	
+	
+	
+	function AddItem(){
+		// 1.요소 생성(li)
+		const newItem = document.createElement("li");
+		// 2.텍스트 필드에 있는 글자 추출
+		const subject = document.querySelector("#subject").value;
+		
+		
+		// input type="text"는 입력값을 value에 넣기 때문에 innerText, textContent를 사용할 수 없다. 
+		//const subject = document.querySelector("#subject").innerText;
+		
+		
+		//3.  텍스트만들기
+		const newText = document.createTextNode(subject)
+		//4. 요소에 텍스트 넣기(요소 노듸의 자식 노추)
+		// <li></li>, 머신러닝, , => <li>머신러닝</li>
+		newItem.appendChild(newText);
+		
+		
+		// 5. 삽입할 기존 위치의 부모 선택
+		const itemLIst = document.querySelector("#itemList");
+		// 추가
+		//itemList.appendChild(newItem); 맨뒤에 추가
+		
+		
+		// 삽입
+		itemList.insertBefore(newItem, itemList.childNodes[0]);
+		
+		
+		// 텍스트입력에 있는 입력한 글자 삭제
+		document.querySelector("#subject").value ="";
+		document.querySelector("#subject").focus();
+	}
+	
+	
+	</script>
+</body>
+</html>

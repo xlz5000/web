@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내장객체 : string</title>
+<script type="text/javascript">
+	let str1 = "Hello";
+	let str2 = new String("방가방가");
+	
+	
+	//길이 :length
+	document.write(str1.length+"<br>"); //5
+	document.write(str2.length+"<br>"); //4
+
+
+
+	// n번째 추출: charAt(n) *n은 index=0부터
+	document.write(str1.charAt(0)+"<br>"); //H
+	document.write(str2.charAt(3)+"<br>"); // 가
+	
+	
+	// 문자연결자 :concat(str)
+	document.write(str1.concat(str2)+"<br>"); //Hello방가방가
+	document.write(str1+ str2 +"<br>"); //Hello방가방가
+	
+	// 해당 문자열의 위치 값: indexOf('문자열'), 찾는 문자열이 없으면 -1(정규식에 사용할 수 없다.)
+	document.write(str1.indexOf('l')+"<br>"); //2
+	document.write(str2.indexOf('l') +"<br>"); //-1
+	
+	
+	// 해당 문자열의 마지막 위치 값: lastIndexOf('문자열');
+	document.write(str1.indexOf('l') +"<br>"); //2
+	document.write(str1.lastIndexOf('l') +"<br>"); //3
+	
+	// 원하는 문자열추출: substring(begin, end), slice(begin, end), substr(begin, count)
+	//				** end 는 포함되지 않는다.
+	
+	str1 = "Apple, Banana, Kiwi";
+	document.write(str1.substring(7,13));
+	document.write(str1.slice(7,13));
+	document.write(str1.substr(7,13));
+	
+	// 치환 :replace(old, new) => 원본은 변경되지 않는다(별도로 저장)
+	let str3 = str1.replace("Banana", "Mango");
+	document.write(str1 + "<br>")
+	document.write(str3 + "<br>")
+	
+	//대소문자 변환 :toUpperCase(), toLowerCase()
+	document.write(str1.toUpperCase() + "<br>");
+	document.write(str1.toLowerCase() + "<br>");
+	
+	//나누기 : split('구분자') =>배열로 저장
+	let str4 = str1.split(",");
+	for (var i = 0; i < str4.length; i++) {
+		document.write(str4[i] + " 사세요~~<br>")
+	}
+	document.write("<hr>");
+	
+	for (var k in str4) {
+		document.write(str4[k] + " 사이소~~<br>")
+	}
+	document.write("<hr>");
+	
+	
+	
+	str4.forEach(item =>{
+		document.write(item + "사세요 $$<br>");
+	});
+	
+	document.write(str4.map(item => item + "사세요 $$ <br>"))
+	
+	
+	//trim() : 앞뒤 공백제거
+	str1 ="apple, banana, kiwi";
+	str2 = "  apple, banana, kiwi";
+	document.write(str1.length + "<br>");
+	document.write(str2.length + "<br>");
+	document.write(str2.trim().length + "<br>");
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

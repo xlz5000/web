@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 : 라이트 박스</title>
+<link rel="stylesheet" href="../css/ex07.css">
+</head>
+<body>
+	<div class="row">
+		<ul>
+			<!-- src : 브라우저가 페이지 로드 시 즉시 불러옴 -->
+			<!-- data-src : JS에서 나중에 불러올 때 사용  -->
+			<li><img alt="" src="../images/tree-1-thumb.jpg"
+				data-src="../images/tree-1.jpg" class="pic"></li>
+			<li><img alt="" src="../images/tree-2-thumb.jpg"
+				data-src="../images/tree-2.jpg" class="pic"></li>
+			<li><img alt="" src="../images/tree-3-thumb.jpg"
+				data-src="../images/tree-3.jpg" class="pic"></li>
+			<li><img alt="" src="../images/tree-4-thumb.jpg"
+				data-src="../images/tree-4.jpg" class="pic"></li>
+			<li><img alt="" src="../images/tree-5-thumb.jpg"
+				data-src="../images/tree-5.jpg" class="pic"></li>
+			<li><img alt="" src="../images/tree-6-thumb.jpg"
+				data-src="../images/tree-6.jpg" class="pic"></li>
+
+		</ul>
+
+
+	</div>
+	<div id="lightbox" onclick="img_close()">
+		<img alt="" src="../images/tree-1.jpg" id="lightboximage">
+	</div>
+	
+	<script type="text/javascript">
+		let pics = document.querySelectorAll(".pic");
+		let lightboximage = document.querySelector("#lightboximage");
+		let lightbox = document.querySelector("#lightbox");
+		
+		for(let k in pics){
+			
+			pics[k].addEventListener('click', showLightBox);
+			
+			
+			
+		} 
+		
+/* 		3번
+		for(let k in pics){
+			
+			pics[k].addEventListener('mouseover', showLightBox);
+			
+		} */
+		
+		function showLightBox(){
+			// dataset.src => img의  data-src 속성
+ 			let big = this.dataset.src;
+			lightboximage.src= big;
+			lightbox.style.display = "block"; 
+			
+			
+/* 			2번
+			let big = this.src;
+			alert(big); */
+			
+		}
+		
+		function img_close(){
+			lightbox.style.display ="none";
+		}
+	
+	
+	
+	
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>가변레이아웃: 퍼센트 사용</title>
+<style type="text/css">
+ * {
+ 	margin: 0px;
+ 	padding: 0px;
+ 	box-sizing: border-box;
+ }
+ 
+ .container{
+ 	width: 90%;
+ 	margin: 20px auto;
+ 	text-align: center;
+ }
+ 
+ .header{
+ 	width: 100%;
+ 	height: 100px;
+ 	background-color: lightgray;
+ }
+ .main{
+    width: 70%;
+    height: 60vh;
+    background-color: tomato;
+    float: left; 	
+ }
+ .aside{
+    width: 30%;
+    height: 60vh;
+    background-color: lightblue;
+    float: left; 	
+ }
+ .footer{
+ 	clear:both;
+ 	width: 100%;
+ 	height: 100px;
+ 	background-color: lightgray;
+ }
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="header">HEADER</div>
+		<div class="main">MAIN</div>
+		<div class="aside">A SIDE</div>
+		<div class="footer">FOOTER</div>
+	</div>
+</body>
+</html>

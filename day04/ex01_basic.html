@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- <link rel="stylesheet" href="css 파일 위치"> -->
+<style type="text/css">
+	/*선택자{속성1 : 속성값; 속성2: 속성값;}  */
+	p{
+		color: blue;
+		
+	}
+	
+	#title{
+		color: green;
+	}
+	
+	.text{
+		color: orange;
+	}
+	
+	
+	h2{
+	color: pink;
+	}
+	
+	h2{
+	color:skyblue;
+	}
+
+</style>
+</head>
+<body>
+
+<!-- 
+	1. html + css 연결
+	1) 인라인 스타일(inline): 시작태그에 style 속성을 사용하는 기술
+	ex) <p style="color:red">한국 ICT 인재 개발원</p>
+	
+	2) 내부 스타일(internal): head 태그안에 style 태그 사용
+	 	ex) 선택자{속성1 : 속성값; 속성2: 속성값;}
+	
+	3) 외부 스타일(external) : head 태그 안에 link 태그를 사용해서  외부 CSS 파일을 읽어오기
+		ex) <link rel="stylesheet" href="css 파일 위치">
+		
+		
+	4) 브라우저 스타일 :  웹 브라우저에서 기본적으로 만들어져 있는 스타일
+	
+	
+	우선순위)
+	1. !important  -> 최우선 p{color: blue !important;}
+	2. 인라인 스타일 -> <p style="color: red;">
+	3. id 선택자
+	4. class, 속성 선택자, 가상 클래스
+	5. 태그 선택자
+	6. 브라우저 기본 스타일
+ -->
+ 
+ 
+ <p id="title" class="text" style="color:red"> 이 텍스트의 색상은? </p><!--  red -->
+ <p id="title" class="text"> 이 텍스트의 색상은? </p> <!-- green -->
+ 
+ 
+ 
+ <!--  동일한 선택자가 중복되면 나중에 작성한 스타일이 적용된다.-->
+ <h2>이 태그의 색상은?</h2>
+</body>
+</html>

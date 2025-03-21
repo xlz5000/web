@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery-addClass</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	
+<style type="text/css">
+.bg_yellow{
+background-color: red;
+}
+.bg_green{
+background-color: green;
+}
+
+.fg-red{color:red;}
+
+.fg_white{
+color: white;
+}
+
+</style>
+</head>
+<body>
+
+	<div>
+		<p>Hello-1</p>
+		<p>Hello-2</p>
+		<p>Hello-3</p>
+		<p>Hello-4</p>
+		<p>Hello-5</p>
+	</div>
+	
+	<div id="mydiv">
+		<p>Hello-1</p>
+		<p>Hello-2</p>
+		<p>Hello-3</p>
+		<p>Hello-4</p>
+		<p>Hello-5</p>
+	</div>
+	
+	<script type="text/javascript">
+	// p요소의 첫번째와 마지막 요소 선택
+	//$("div p").first().addClass("bg_yellow fg_white");
+ 	//$("div p").last().addClass("bg_green").addClass("fg_white");
+	
+	
+	//$("div p:first").addClass("bg_green fg_white");
+	//$("div p:last").addClass("bg_yellow").addClass("fg_red");
+	
+	
+	//$("#mydiv p").addClass("bg_green fg_white");
+	
+	//:even => 짝수, :odd => 홀수
+	// index  이기때문에 0부터
+	$("#mydiv p:odd").addClass("bg_green fg_white");
+	
+	</script>
+
+</body>
+</html>

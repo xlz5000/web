@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>layout</title>
+<style>
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+#header {
+	background-color: lightgray;
+	padding: 30px;
+	text-align: center;
+	font-size: 1.2em;
+	color: white;
+}
+
+#footer {
+	background-color: lightgray;
+	padding: 30px;
+	text-align: center;
+	font-size: 1.0em;
+	color: white;
+	clear: both;
+}
+
+#nav {
+	list-style-type: none;
+	background-color: gray;
+	padding: 0px;
+	margin: 0px;
+}
+
+#nav ul {
+	display: inline-block;
+}
+
+#nav>ul>li {
+	list-style-type: none;
+	float: left;
+	padding: 30px 100px;
+	color: white;
+}
+
+#content {
+	margin: 0px auto;
+}
+
+.left {
+	width: 20%;
+	height: 400px;
+	background-color: lightyellow;
+	float: left;
+}
+
+.right {
+	width: 70%;
+	height: 400px;
+	background-color: lightyellow;
+	float: left;
+}
+</style>
+</head>
+<body>
+	<div id="header">
+		<h1>헤더 부분</h1>
+	</div>
+	<div id="nav">
+		<ul>
+			<li>메뉴1</li>
+			<li>메뉴2</li>
+			<li>메뉴3</li>
+		</ul>
+	</div>
+	<div id="content">
+		<section class="left">
+			<ul>
+				<li>왼쪽메뉴1</li>
+				<li>왼쪽메뉴2</li>
+				<li>왼쪽메뉴3</li>
+				<li>왼쪽메뉴4</li>
+			</ul>
+		</section>
+		<section class="right">
+			<h2>소제목</h2>
+			<p>안녕하세요</p>
+			<p>안녕하세요</p>
+			<p>안녕하세요</p>
+			<p>안녕하세요</p>
+		</section>
+	</div>
+	<div id="footer">
+		<p>footer내용..</p>
+		<p>footer내용..</p>
+		<p>footer내용..</p>
+		<p>footer내용..</p>
+	</div>
+</body>
+</html>

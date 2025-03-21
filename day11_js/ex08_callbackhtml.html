@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>콜백 - setTimeout, setInterval</title>
+</head>
+<body>
+<script type="text/javascript">
+	console.log('실행시간', new Date().toLocaleTimeString());
+	
+	//한번만 실행된다.
+/* 	setTimeout(() => {
+		
+		console.log('setTimeout 실행시간 : ', new Date().toLocaleTimeString());
+	},1000); */
+	
+	
+	// 무한
+/* 	setInterval(() => {
+		
+		console.log('setInterval 실행시간 : ', new Date().toLocaleTimeString());
+	},1000);
+ */
+ 
+ 	const chk = setInterval(timer1, 1000);
+ 	
+ 
+ 	let cnt = 0;
+ 	function timer1(){
+ 		cnt++;
+ 		console.log('setInterval2 실행시간 : ', new Date().toLocaleTimeString());
+ 		if(cnt == 3){
+ 			
+ 			clearInterval(chk);
+ 		}
+ 	}
+
+</script>
+
+</body>
+</html>

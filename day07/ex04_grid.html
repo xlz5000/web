@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>그리드 레이아웃</title>
+<style type="text/css">
+.container{
+	width: 800px;
+	border: 1px solid #222;
+	display: grid;
+	margin-bottom: 20px;
+
+}
+
+h1{
+font-size: 24px;
+}
+
+.items{
+border: 1px solid #222;
+padding: 10px;
+font-size: 20px;
+text-align: center;
+
+
+}
+.items{
+border: 1px solid #222;
+padding: 10px;
+font-size: 20px;
+text-align: center;
+
+}
+
+
+/*auto-fit: 빈 공간을 자동으로 채운다.*/
+.container-1{
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+}
+
+/*auto-fit: 빈 공간을 그대로 유지.*/
+.container-2{
+	grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+
+}
+.items:nth-child(odd){
+background-color: orange;
+
+}
+
+.items:nth-child(even){
+background-color: skyblue;
+
+}
+
+</style>
+</head>
+<body>
+	<h1>auto-fit</h1>
+	<div class="container container-1">
+		<div class="items">1</div>
+		<div class="items">2</div>
+		<div class="items">3</div>
+		<div class="items">4</div>
+		<div class="items">5</div>
+	</div>
+	<h1>auto-fill</h1>
+	<div class="container container-2">
+		<div class="items">1</div>
+		<div class="items">2</div>
+		<div class="items">3</div>
+		<div class="items">4</div>
+		<div class="items">5</div>
+	
+	</div>
+</body>
+</html>

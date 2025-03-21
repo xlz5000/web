@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>객체 : Object</title>
+
+<!-- 
+	객체(Object) :  상태값(properties)과 기능(function, method)
+	1. 내장객체 : 자주 사용하는 요소는 미리 객체로 정의되어 있다.
+	2. 문서객체모델(DOM) : 웹 문서 자체도 개체이고 웹 문서에 포함된 이미지, 링크 , 텍스트필드 등은 각각 별도의 객체이다.
+	3. 웹 브라우저 객체 :  웹 브라우저에서 사용하는 정보도 객체로 지정되어 있다.
+	4. 사용자 정의 객체 : 사용자가 필요할 때마다 자신의 객체를 정의해서 사용할 수 있다.
+	-->
+	<style type="text/css">
+	body{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
+	
+	}
+	
+	.container{
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	border: 1px solid #222;
+	background-color: skyblue;
+	text-align: center;
+	margin-bottom: 100px;
+	
+	}
+	
+	.accent{
+	font-size: 1.8em; /* 16px * 1.8 */
+	font-weight: bold;
+	color: red;
+	
+	}
+	
+	</style>
+</head>
+<body>
+	<h1>내장객체 : Date</h1>
+	<div class="container">
+		<h1>책 읽기</h1>
+		<p><span class="accent" id="result"></span>일 연속으로<br>
+		책 읽기 달성했군요</p>
+		<p>축하 합니다</p>
+	</div>
+	
+	<script type="text/javascript">
+	// new 내장객체 => 생성
+	let today = new Date(); // 오늘날짜
+	let firstDay = new Date("2025-03-01"); //지정한 날짜
+	
+	// 날짜 계산식
+	// 밀리초 => 1000 => 1초, 시작점 : 1970년 1월 1일 0시 0분 0초
+	let toNow = today.getTime(); //오늘 날짜 시간 (밀리초);
+	let toFirst = firstDay.getTime();//지정한 날짜(밀리초)
+	
+	// 자바스크립트 표현식 => `${변수}`
+	//console.log("today :" + today);
+	//console.log("firstDay :", today)
+	//console.log(`today : ${today}`)
+	
+	
+	//console.log(`toNow : ${toNow}`);
+	//console.log(`toFirst : ${toFirst}`);
+	
+	let passTime = toNow - toFirst; //대출일부터 오늘날짜 까지(밀리초)
+	passTime = Math.floor(passTime/(1000*60*60*24));
+	
+	
+		console.log(`passTime: ${passTime}`);
+	// 자바스크립트 변수를 태그(innerHTML) | 문자(innerText)를 넣자
+	// innerText : 해당 위치에 문자를 get/set할때 사용
+	// innerHTML : 해당 위치에 태그를 get/set할때 사용
+	// 변수 이름 = innerText 또는 innerHTML;(get 기능)
+	// 변수 이름..innerHTML 또는 이름..innerText = ~~~~ ;(set 기능)
+	
+	
+	document.querySelector("#result").innerText = passTime;
+	
+	</script>
+	
+	<script type="text/javascript">
+	
+	let now = new Date();
+	console.log(`now: ${now}`);
+	console.log(`now : ${now.toLocaleString()}`);
+	</script>
+
+</body>
+</html>

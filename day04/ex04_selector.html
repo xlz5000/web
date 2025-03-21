@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자식과 자손 선택자</title>
+
+<style type="text/css">
+/*자식 선택자 */
+.parent>p {
+	color: red;
+}
+
+/*자손 선택자*/
+.parent2  p {
+	color: red;
+}
+
+li{
+	
+	color: green;
+}
+
+#a > li {
+color:blue;
+}
+
+
+.b > li {
+color:skyblue;
+}
+
+</style>
+</head>
+<body>
+
+	<!-- 자식선택자(>) : 부모요소 >  자식요소 
+		바로 아래에 있는 요소
+-->
+
+	<div class="parent">
+		<p>첫번째 단락 (직계자식)</p>
+		<span>
+			<p>두번째 단락(손자)</p>
+		</span>
+	</div>
+	<hr>
+
+	<!-- 자손 선택자(공백) : 부모요소 자식요소
+모든 하위 요소 -->
+	<div class="parent2">
+		<p>첫번째 단락 (직계자식)</p>
+		<span>
+			<p>두번째 단락(손자)</p>
+		</span>
+	</div>
+	<hr>
+	<ul id="a">
+		<li>자식요소1</li>
+		<li>자식요소2
+			<ol class="b">
+
+				<li>자손요소1</li>
+				<li>자손요소2</li>
+
+			</ol>
+
+		</li>
+		<li>자식요소3
+			<ul class="b">
+
+				<li>자손요소1</li>
+				<li>자손요소2</li>
+
+			</ul>
+
+		</li>
+		<li>자손요소4</li>
+		<li>자손요소5</li>
+
+	</ul>
+
+</body>
+</html>

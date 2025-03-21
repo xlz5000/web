@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>float</title>
+
+<style type="text/css">
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+#header {
+	background-color: lightgray;
+	text-align: center;
+	color: white;
+	padding: 30px;
+	font-size: 2em;
+}
+
+
+/* nav랑 content 합쳐서 100%으로 float해제를 안해줬어도 footer가 내려갔던것
+100%안되면 해제 해줘야함, 만약 100% 안되면 100%안되는 부분을 footer가 차지 */
+#nav{
+	width: 20%;
+	height: 300px;
+	float: left;
+	background-color: lightyellow;
+}
+#content{
+	width: 30%;
+	height: 300px;
+	float: left;
+	background-color: skyblue;
+}
+
+#footer {
+	background-color: lightgray;
+	text-align: center;
+	color: white;
+	padding: 30px;
+	font-size: 1em;
+	clear : both;
+}
+</style>
+</head>
+<body>
+
+
+	<div id="header">
+		<h1>헤더 부분</h1>
+
+	</div>
+	<div id="nav">
+		<ul>
+			<li>메뉴1</li>
+			<li>메뉴2</li>
+			<li>메뉴3</li>
+		</ul>
+	</div>
+	<div id="content">
+		<h1>본문내용</h1>
+		<p>본문내용 ....</p>
+		<p>본문내용 ....</p>
+		<p>본문내용 ....</p>
+		<p>본문내용 ....</p>
+	</div>
+	<div id="footer">
+		<p>footer내용 ....</p>
+		<p>footer내용 ....</p>
+		<p>footer내용 ....</p>
+		<p>footer내용 ....</p>
+
+	</div>
+
+
+</body>
+</html>

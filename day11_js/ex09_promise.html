@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- 미래의 결과를 받을 것? -->
+<title>비동기 작업 - promise</title>
+</head>
+<body>
+<!-- 
+	promise 객체 : 자바스크립트에서 비동기 작업할 때 사용하는 객체 
+				 어떤 작업을 처리하고 결과를 받겠다는 약속 
+				 비동기 작업이 맞이할 미래의 완료 또는 실패와 그 결과값을 나타낸다.
+	const 변수 = new Promise((resolve, reject)=>{
+		- resolve는 Promise가 성공적으로 완료되었을 때 호출된다. 
+		- 이 함수가 회출되면 Promise는 '이행됨' 상태로 바뀌고, then() 블록으로 처리할 수 있는 값을 전달한다.
+		- reject는 Promise가 '거부됨' 상태로 바뀌고, catch() 블록에서 처리할 수 있는 에러 정보를 전달할 수 있다.
+			비동기 작업이 실패했을 떄 reject를 호출하여 에러 메세지를 전달
+	});
+ -->
+ 
+ <script>
+ 	/* const myPromise= new Promise((resolve, reject)=>{ 
+ 		let success =true; //어떤 작업의 결과를 성공이라고 가정하자 
+ 		if(success){
+ 			resolve("작업성공");
+ 		}
+	});
+ 	
+ 	myPromise.then((msg)=>{
+ 		console.log(`성공했나요/ ${msg}`);
+ 	});  */
+ 	
+ 	const myPromise= new Promise((resolve, reject)=>{ 
+ 		let success =false; //어떤 작업의 결과를 실패라고 가정하자 
+ 		if(!success){
+ 			reject("작업실패");
+ 		}
+	});
+
+ 	myPromise.catch((msg)=>{
+ 		console.log(`성공했나요/ ${msg}`);
+ 	});
+ </script>
+</body>
+</html>

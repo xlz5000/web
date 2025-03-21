@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>display:float 이용</title>
+<style type="text/css">
+	#wrap{
+		width: 350px;
+ 		height: 150px; 
+		margin: 10px auto;
+		background-color: lightgray;
+/* 		overflow: hidden; 벗어난 부분 숨기자 */ 
+	
+	}
+	
+	
+	#wrap .left {
+		width: 100px;
+		height: 100px;
+		background-color: skyblue;
+		float:left;
+	
+	}
+	
+	
+	#wrap .center {
+		width: 100px;
+		height: 100px;
+		background-color: tomato;
+		float:left;
+	}
+	
+	
+	#wrap .right {
+		width: 100px;
+		height: 100px;
+		background-color: green;
+		float:left;
+	}
+	#wrap .right2{
+		width: 100px;
+		height: 100px;
+		background-color: black;
+		float:left; 
+	}
+	
+	#wrap .end{
+		width: 400px;
+		height: 400px;
+		background-color:skyblue; 
+		clear: both; 
+		
+		
+	
+	}
+	
+	#wrap2{
+		width: 350px;
+ 		height: 150px; 
+		margin: 10px auto;
+		background-color: lightgray;
+	
+	}
+	
+	
+	#wrap2 .left {
+		width: 100px;
+		height: 100px;
+		background-color: pink;
+		float:left;
+	
+	}
+	
+	
+	#wrap2 .center {
+		width: 100px;
+		height: 100px;
+		background-color: tomato;
+		float:left;
+	}
+	
+	
+	#wrap2 .right {
+		width: 100px;
+		height: 100px;
+		background-color: green;
+		float:left;
+	}
+	
+	#wrap2 .right2{
+	width: 320px;
+	height: 120px;
+	background-color: green;
+	clear: both;
+	}
+
+
+</style>
+</head>
+<body>
+
+	<div id="wrap">
+		<section class="left"></section>
+		<section class="center"></section>
+		<section class="right"></section>
+		<!-- wrap 너비 크기를 벗어나니까 아래로 -->
+		<!-- wrap 너비 높이를 벗어난 것을 숨기자 :  -->
+		<section class="right2"></section>
+		<!--float:left 해제  -->
+		<section class="end"></section>
+	</div>
+	
+	<br><br>
+	<div id="wrap2">
+		<section class="left"></section>
+		<section class="center"></section>
+		<section class="right"></section>
+		<!-- float:left 를 하지 않았을 때 
+		시작점 좌측 상단이 된다.
+		-->
+		<section class="right2"></section>
+		<section class="left"></section>
+	</div>
+
+</body>
+</html>

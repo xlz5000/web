@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>제어문 :  switch </title>
+</head>
+<body>
+<script type="text/javascript">
+/* 	switch(key){
+	case value1 : value와 key 같을 때 실행; break;
+	case value1 : value와 key 같을 때 실행; break;
+	case value1 : value와 key 같을 때 실행; break;
+	default :나머지; 
+	break;
+	}
+ */
+ 
+ //prompt로 받은 문자가 a, A이면 아프리카 
+ //  b, B이면 브라질, c, C이면 캐나다 나머지 대한민국 출력하자
+ 
+ let ch = prompt("문자 입력:", 'a');
+ let result= '';
+ switch(ch){
+ case 'a' :
+ case 'A' : result= "아프리카";break;
+ case 'b' :
+ case 'B' : result= "브라질";break;
+ case 'c' :
+ case 'C' : result= "캐나다";break;
+ default: result="대한민국";
+ 
+ }
+ 
+ document.write("<h2> 결과 ; " + result + "</h2>");
+</script>
+
+</body>
+</html>

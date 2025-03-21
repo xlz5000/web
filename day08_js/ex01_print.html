@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>화면출력(브라우저 출력)/콘솔창 출력(디버깅)</title>
+<script type="text/javascript">
+	// 1. 브라우저에 출력하기(head 부분이 body 부분보다 먼저 출력)
+	document.write("Hi~~");
+	document.write('<h1 style="color:red">방가방가</h1>');
+	document.write("<h1 style='color:blue'>Hi!!</h1>");
+	//2. 콘솔창에 출력하기(F12(개발자) => 디버깅할 때 주로 사용)
+	console.log('console-1');
+</script>
+
+</head>
+<body>
+
+	<!-- 
+	자바스크립트 선언문은 <head>안, <body> 모두 사용가능
+	형식)<script type="text/javascript">
+			자바스크립트(JS)코드;
+			"", '' 혼용가능
+			" ' 안됨
+			"''", '""'(사용가능)
+			
+			</script>
+	
+ -->
+
+	<script type="text/javascript">
+		document.write("본문 태그 앞");
+		console.log('console-2');
+	</script>
+	<h1>Hello JavaScript console.log('console-1');</h1>
+
+	<script type="text/javascript">
+		document.write("본문 태그 뒤");
+		console.log('console-3');
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	let numbers = [10,20,30,40,50];
+	
+	// every : 모든 요소가 만족하면 true(and)
+	let res  = numbers.every(item => item > 20);
+	document.write(`res 결과 :${res}<br>`);
+	
+	
+	// some : 요소 중 하나만 만족해도 true(or)
+	res = numbers.some(item => item < 11 );
+	document.write(`res 결과 : ${res}<br>`);
+
+	
+	// join :  배열의 모든 요소를 문자열로 결합하는 것
+	let fruits = ["apple", "banana", "charry"];
+	res = fruits.join("-");
+	document.write(`res결과 : ${res}<br>`);
+	
+	
+	
+	//filter : 조건을 만족하는 요소만 새 배열을 만든다.
+	let words = ["hello", "world", "javascript", "css", "html"];
+	res = words.filter(item => item.length >=5 );
+	document.write(`res결과 : ${res}<br>`);
+</script>
+
+</body>
+</html>

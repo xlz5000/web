@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>화살표 함수</title>
+<script type="text/javascript">
+// 화삺표 함수는 function 예약어 대신 => (화살표)를 사용하여 더 간결하게 함수를 작성
+// 기본 문법 : let | const 함수 이름 = (매개변수) => 표현식;
+// 예) let msg = () {console.log("Hello JS")};
+
+
+
+// 1. 문자열을 소문자로 변경
+const toLower = str => str.toLowerCase();
+console.log(toLower("HelloWorld"));
+
+
+
+// (매개변수)에서 ()는 매개변수가 하나일 경우 생략 가능
+// 매개변수가 없거나 매개변수가 두개 이상일때는 반드시 ()를 해줘야 한다.
+
+
+// {}안에 명령줄 한 줄이면 {}와 return 모두 생략할 수 잇다.
+const toLower2 = (str) => {return str.toLowerCase()};
+console.log(toLower2("Welcome KOREA"));
+
+
+
+// {}안에 명령줄 한 줄이면 {}와 return 모두 생략할 수 없다.
+const addNumbers = (a, b) =>{
+	
+	const sum = a + b;
+	return sum;
+}
+console.log(addNumbers(3, 7));
+
+// 배열에서 짝수만 필터링하여 반환
+const res = numbers => {
+	
+	const evens = numbers.filter(k => k %2 === 0);
+	return evens;
+}
+
+
+console.log(res([1,2,3,4,5,6,7,8]));
+
+
+//객체를 반환할때는 ({})사용해서 반환해야 한다.
+// const getUser = name => {name: name, age:25 }; // 문법오류
+const getUser = name => ({name: name, age:25 });
+console.log(getUser("Alice"));
+
+
+const getUser2 = name => {
+	return {name: name, age:14 };
+}
+console.log(getUser("Tom"));
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>플렉스 박스 레이아웃</title>
+<style type="text/css">
+	.container{
+		width: 800px;
+		display: flex;
+		border: 1px solid #222;
+		background-color: #eee;
+		gap : 30px;
+	}
+	.box{
+		background-color: black;
+		flex-basis: 150px; /* 항목크기  */
+	}
+	p{
+		color: white;
+		text-align: center;
+		font-size: 32px;
+	}
+</style>
+</head>
+<body>
+<!--
+    gap은 플렉스 항목간의 간격을 말한다.인접요소가 없으면 gap이 생긱지 않음 
+	플렉스 박스를 이용한 반응형 웹 만들기 위한 레이아웃 속성
+	flex-basis : 항목의 기본 크기를 지정
+	flex-grow : 공간이 남아 있으면 항목을 늘리기
+	flex-shrink : 공간이 부족하면 항목을 줄이기
+  -->
+  <div class="container">
+  	<div class="box"><p>가나다라마</p></div>
+  	<div class="box"><p>가나다라마바사아자</p></div>
+  	<div class="box"><p>ABC</p></div>
+  </div>
+</body>
+</html>

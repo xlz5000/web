@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>미디어 쿼리</title>
+<style type="text/css">
+	body{
+		display: flex;
+		justify-content: center;  /*  주축 가운데 */
+		align-items: center;      /* 교차축 가운데 */
+		height: 100vh;
+	}
+	/* 화면 너비가 768px 이상, 1024px 미만 일때 문서의 글자색과 배경색을 바꾸자 */
+	@media screen and (min-width:768px) and (max-width:1023px) {
+		body {
+	       background-color: gray;
+        }
+        h1{color: white;}
+	}
+</style>
+</head>
+<body>
+	<h1>안녕하세요</h1>
+</body>
+</html>

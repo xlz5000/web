@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fatch-외부데이터가져오기(xml 파일)</title>
+</head>
+<body>
+
+ <button id="btn">불러오기(json)</button>
+ <div id="log"></div>
+
+
+<script type="text/javascript">
+const btn = document.querySelector("#btn");
+const log = document.querySelector("#log");
+
+btn.addEventListener("click", (e)=>{
+	fetch("sample.xml")
+	.then(response => response.text())
+	.then(text =>{
+		//문자열로 된 XML 데이터를 XLM DOM(Document Object Model) 객체로 변환
+		return new DOMParser().parseFromString(text, 'application/xml');
+	})
+	.then(data =>{
+		//log.innerHTML = data.querySelector("apple").textContent;
+		
+		
+		let output ="";
+		data.querySelectorAll("data >*").forEach(item => {
+			// output = `<p><strong>${item.nodeName}:</strong> ${item.textContent}</p}`;
+			output += `<p>텍스트(content) :  ${item.textContent}</p}`;
+			output += `<p>속성(count):${item.getAttribute("count")}</p}`;
+
+		});
+		document.querySelector("#log").innerHTML = output;
+		
+	});
+});
+
+
+
+</script>
+
+</body>
+

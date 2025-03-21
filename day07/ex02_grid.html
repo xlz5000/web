@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>그리드 레이 아웃</title>
+<style type="text/css">
+/* flexbox 는 1차원 => 행 또는 열 , 작은 요소들 정렬 
+   grid 는 2차원 => 행과 열 지정, 전체페이지, 큰 영역
+*/
+
+/* 1. 부모컨테이너에서 display: grid; */
+.container{
+   display: grid;
+   /* 2. 행과 열 지정 */
+   /* grid-auto-columns: 200px; */
+  
+   /* 상대적인 크기 지정 */
+     grid-template-columns: 1fr 2fr 1fr; 
+  /*  grid-template-columns: repeat(4, 1fr); */
+  
+   grid-auto-rows: 100px;
+   
+   grid-gap: 10px 50px; /* 행간격  열간격 */
+}
+.items{
+	border: 1px solid #222;
+	font-size: 20px;
+	text-align: center;
+	padding: 10px;
+	/* 글자 높이가운데 정렬 */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.items:nth-child(even){
+	background-color: tomato;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="items">1</div>
+		<div class="items">2</div>
+		<div class="items">3</div>
+		<div class="items">4</div>
+		<div class="items">5</div>
+		<div class="items">6</div>
+	</div>
+</body>
+</html>

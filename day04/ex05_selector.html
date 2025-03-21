@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>형제요소의 순서를 이용한 선택</title>
+
+<style type="text/css">
+	/* 모든 p태그 중 2번째 p태그 선택 */
+	p:nth-of-type(2) {color:red;}
+	
+	
+	/*h3가 들어가도 타격 x p태그중 첫번째 선택하는 것, 하지만 아래는 다름*/
+	p:first-of-type{
+	color:blue;
+	}
+	
+
+	p:last-of-type{
+	color:green;
+	}
+	
+	
+	/* 부모요소안에서 첫번째 자식이 p이면 적용*/ /* 고로 h3는 적용 x <p>안 첫번째 문단</p>에만 적용*/
+	/* 둘다 부모요소안에서 첫번째 자식이 **p**여야함*/
+	p:first-child{
+	background-color:lightgray;
+	}
+	p:last-child{
+	background-color:lightgray;
+	}
+	
+	.exam p:first-child{
+		background-color: skyblue;
+	
+	}
+
+</style>
+</head>
+<body>
+
+
+<!-- 
+
+	 같은 태그끼리 개수를 세어 n 번째 태그 선택 => 요소: nth-of-type(index=1부터)
+	 같은 태그끼리 첫번째와 마지막 선택 =>  요소:first-of-type, 요소:last-of-type
+	 형제 요소의 순서 =>  요소:first-child, 요소:last-child
+
+ -->
+ 
+ 	<h3>제목</h3>
+	<p>첫번째 문단</p>
+    <p>두번째 문단</p>
+    <div class="exam">
+        <p>안 첫번째 문단</p>
+        <p>안 두번째 문단</p>
+        <p>안 세번째 문단</p>
+    </div>
+    <p>세번째 문단</p>
+    <p>네번째 문단</p>
+    <p>다섯번째 문단</p>
+	<span>여섯번째 문단</span>
+    
+    
+</body>
+</html>

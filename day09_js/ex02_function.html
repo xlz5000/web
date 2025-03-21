@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>콜뱍함수</title>
+<script type="text/javascript">
+//콜백 함수 :  다른 함수에 인자(매개변수 )로 전달되는 함수로, 
+//			특정 작업이 끝난 후 호출되거나 특정 조건에서 실행되는 함수
+//콜백 함수는 비동기 프로그래밍, 이벤트 처리, 배열 메소드, 커스텀 하수 등에서 자주 사용된다.
+//특징
+//1. 함수를 인자로 전달함
+//2. 나중에 실행된다.(필요할 때 호출)
+//3. 비동기 프로그램에서 필수적이다.
+//4. 배열 메소드 (map, filter, find, forEach, reduce)
+
+function greet(name, callback){
+	
+	console.log("Hello, " + name);
+	callback();
+}
+
+function sayGoodbye(){
+	
+	console.log("Goodbye!");
+	
+	
+}
+
+//함수() => 함수 실행
+// 함수 => 함수 참조
+
+greet("Alice", sayGoodbye);
+
+function sayHello(){
+	console.log("Hello, World!")
+	
+	
+}
+
+
+sayHello();
+
+const res2 = sayHello;
+res2();
+
+function myfunc(){
+	alert("경고메세지-1");
+	
+}
+
+function send_go1(){
+	// setTimeout(콜백함수,지연시간 ): 지연시간 후 콜백함수 실행
+	setTimeout(function(){
+		alert("경고메세지-2");
+	},  2000);
+}
+function send_go2(){
+	setTimeout(() => {
+		alert("경고메세지-3");
+	}, 2000);
+}
+function send_go3(){
+	setTimeout(myfunc, 2000);
+}
+
+//send_go1();
+//send_go2();
+//send_go2();
+</script>
+
+
+
+</head>
+<body>
+<!-- html 속성 on으로 시작하는 속성은 보통 자바스크립트 호출이다. -->
+	<button onclick="send_go1()">클릭1</button>
+	<button onclick="send_go2()">클릭2</button>
+	<button onclick="send_go3()">클릭3</button>
+
+</body>
+</html>
