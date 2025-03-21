@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form: 속성 상태(selected, checked, hidden)</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<div id="wrap">
+		<p>내용1</p>
+		<p style="display: none;">내용2</p>
+		<p>내용3</p>
+	</div>
+
+	<form action="#">
+
+		<!-- :selected => select 태그에서 선택된 요소에만 붙는 속성 -->
+		<p id="zone1">
+			<select name="course" id="course">
+				<option value="opt1">옵션1</option>
+				<option value="opt2" selected>옵션2</option>
+				<option value="opt3">옵션3</option>
+			</select>
+		</p>
+		<p id="zone2">
+			<input type="checkbox" name="hobby" value="독서"> 도서
+			<input type="checkbox" name="hobby" value="자전거" checked> 자전거
+			<input type="checkbox" name="hobby" value="등산"> 등산
+			<input type="checkbox" name="hobby" value="영화" checked> 영화
+		</p>
+		<p>
+		<p id="zone3">
+			<input type="radio" name="gender" value="man">남성
+			<input type="radio" name="gender" value="woman" checked>여성
+		
+		
+		</p>
+	</form>
+	<script type="text/javascript">
+	$("#wrap p:hidden").css({"display": "block", "background-color":"green"})
+	
+	
+	// 아이디가 zone1안에 selected 가진 요소의 value를 추출해서 저장
+		const msg1 = $ ("#zone1 :selected").val();
+		console.log(`msg1 : ${msg1}`);
+		
+		// 아이디가 zone2안에 checked 가진 요소의 value를 추출해서 저장	
+		// 현재 가장 먼저 체크된 것 하나만 나온다.
+		const msg2 = $ ("#zone2 :checked").val();
+		console.log(`msg2 : ${msg2}`);
+		
+		const msg3 = $ ("#zone3 :checked").val();
+		console.log(`msg3: ${msg3}`);
+	</script>
+</body>
+</html>

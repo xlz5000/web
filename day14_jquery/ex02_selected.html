@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+	<form action="#">
+		<p id="zone1">
+			<select name="course" id="course">
+				<option value="opt1">옵션 1</option>
+				<option value="opt2" selected>옵션 2</option>
+				<option value="opt3">옵션 3</option>
+			</select>
+		</p>
+
+
+		<p id="zone2">
+			<input type="checkbox" name="hobby" value="독서">독서 
+			<input type="checkbox" name="hobby" value="자전거">자전거 
+			<input type="checkbox" name="hobby" value="등산" checked>등산
+			<input type="checkbox" name="hobby" value="영화" checked>영화
+		</p>
+
+		<p id="zone3">
+			<input type="radio" name="gender" value="남성">남성
+			<input type="radio" name="gender" value="여성" checked>여성
+		</p>
+
+		<p id="zone4">
+			<select name="sweets" id="sweets" multiple size="6">
+			<option>Chocolate(초콜렛)</option>
+			<option selected>Candy(캔디)</option>
+			<option>Taffy(태피)</option>
+			<option selected>Caramel(카라멜)</option>
+			<option>Fudge(퍼지)</option>
+			<option>Cookie(쿠키)</option>
+			</select>
+
+		</p>
+
+
+	</form>
+	
+	<hr>
+	
+	
+	
+	<div>
+		<p>선택된 옵션 : <span id="result1"></span></p>
+		<p>선택된 성별 : <span id="result2"></span></p>
+		<p>선택된 취미 : <span id="result3"></span></p>
+		<p>선택된 상품 : <span id="result4"></span></p>
+
+	
+	</div>
+	
+	<script type="text/javascript">
+	// select, radio, checkbox => "change" -> on("change", function({}))
+	$("#course").on("change" , function(){
+		const txt = $("#course option:selected").text();
+		$("#result1").text(`${txt}`);
+		
+	});
+	
+	$("input[name='hobby']").on("change", function(){
+		// 체크박스는 여러개 선택 가능 그러므로 배열로 받아야 한다.
+		let txts = [];
+		$("input[name='hobby']:checked").each(function(index, value){
+			txts.push($(this).val())
+			
+			
+		});
+		$("#result2").text(`${txts}`);
+	});
+	
+	$("input[name='gender']").on("change", function(){
+		// 라이오버튼은 하나만 선택할 수 있다.
+		const txt  = $("input[name='gender']:checked").val();
+		$("#result3").text(`${txt}`);
+	});
+	
+	$("#sweets").on("change" , function(){
+		let txts = [];		
+		const txt = $("#sweets option:selected").each(function(index, value){
+		txts.push($(this).text())
+		
+		
+		});
+		$("#result4").text(`${txts}`);
+		
+		
+	});
+	
+	
+	
+	
+	//초기상태 업데이트(페이지 로드 시 선택된 값 반영)
+	
+	$(document).ready(function(){
+		// 강제로 실행 => trigger ("change")
+		$("#course").trigger("change");
+		$("input[name='hobby']").trigger("change");
+		$("input[name='gender']").trigger("change");
+		$("#sweets").trigger("change");
+	});
+	
+	
+	
+	</script>
+
+</body>
+</html>

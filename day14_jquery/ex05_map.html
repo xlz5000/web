@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery-map()</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+const member = [
+	{"name": "홍길동", "age":24},
+	{"name": "임꺽정", "age":32},
+	{"name": "장길산", "age":18}
+	];
+
+
+
+const res1 = $.map(member, function(obj, index){
+	// console.log("index: " + index);
+	// console.log("obj: " + obj);
+	
+	if(obj.name === "임꺽정") return obj.age;
+	
+});
+	console.log("res1 : " + res1);
+	console.log(`res1 :  ${res1}`);
+	console.log(`res1[0] :  ${res1[0]}`);
+
+	// map의 반환은 배열
+const res2 = $.map(member, function(obj, index){
+	// console.log("index: " + index);
+	// console.log("obj: " + obj);
+	
+	if(obj.name === "장길산") return obj;
+	
+});
+
+
+	console.log("이름 : " + res2[0].name);
+	console.log(`나이: ${res2[0].age}`)
+
+</script>
+
+</body>
+</html>

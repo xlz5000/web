@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+	<h1>객체 조작 및 생성</h1>
+	<form action="#" id="myform">
+		<p>
+			<input type="checkbox" name="chk1" id="chk1"> 
+			<label for="chk1">chk1</label> 
+			<input type="checkbox" name="chk1" id="chk2" checked> 
+			<label for="chk2">chk2</label> 
+			<input type="checkbox" name="chk1" id="chk3"> 
+			<label for="chk3">chk3</label>
+		</p>
+
+
+		<p>
+			<select name="sele" id="sele">
+				<option value="opt1">option1</option>
+				<option value="opt2">option2</option>
+				<option value="opt3" selected>option3</option>
+			</select>
+		</p>
+	</form>
+	
+	<button id="btn1">1번 체크박스 선택</button>
+	<button id="btn2">1번 option 선택</button>
+	
+	<script type="text/javascript">
+		// prop: 선택한 form 요소(checkbox, radio, select)의 상태값을 가져오거나 설정한다.
+		// $("선택자").prop("select" || "checked") 			=> 상태값 가져오기(true, false)
+		// $("선택자").prop("select" || "checked", true|false) => 상태값 설정하기
+		
+		const result_1 = $("#chk1").prop("checked");
+		const result_2 = $("#chk2").prop("checked");
+		const result_3 = $("#chk3").prop("checked");
+		
+		
+		console.log(result_1);
+		console.log(result_2);
+		console.log(result_3);
+		
+		
+		// selectedIndex => 선택된 인덱스값 => 2
+		const result_4 = $("#sele").prop("selectedIndex");
+		console.log(result_4);
+		
+		
+		
+		$("#btn1").on("click", function(){
+			// 방법1
+			//$("#chk2").prop("checked", false);
+			//$("#chk1").prop("checked", true);
+			
+			
+			//방법2
+			const targetId = "chk1";
+			// input type 속성 중 이름이 chk1인 요소의 모든 checked 속성을 해제한다.
+			//$("input[name='chk1']").prop("checked",false);
+			// id가 chk1인 요소만 checked속성 적용
+			//$("#" + targetId).prop("checked", true);
+			
+			
+			// 방법3
+			$("input[name='chk1']").prop("checked", false)
+			.filter("#chk1").prop("checked", true);
+		});
+		
+		
+		$("#btn2").on("click", function(){
+			//$("#sele option").prop("selected", false); // 현재 선택된 옵션 해제
+			//$("#sele").prop("selectedIndex", 1); // index 1인 요소 선택
+			
+			$("#sele option").filter(function(index){
+				return index === 1
+				
+			}).prop("selected", true);
+		})
+	
+	</script>
+</body>
+</html>

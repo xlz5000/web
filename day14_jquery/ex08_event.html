@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery-event</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+	<p><span id="p1">이벤트 처리</span></p>
+	<p><img id="img" alt="" src="../images/pic_bulboff.gif"></p>
+	<hr>
+	<p>이름 :<input type="text" name="username" id="username"></p>
+	<hr>
+	
+	
+	<p>비번 : <input type="password" name="pwd" id="pwd"></p>
+	<p>비번확인 : <input type="password" name="pwd2" id="pwd2"></p>
+	<p><span id="result"></span></p>
+	
+	<hr>
+	<p>주소 : <input type="text" name="addr" id="addr"></p>
+	<p><input type="checkbox" name="chk" id="chk">상동</p>
+	<p>주소 : <input type="text" name="addr2" id="addr2"></p>
+
+	
+	<hr>
+	<h2 id="title">한국ICT인재개발원</h2>
+	<input type="radio" name="f_color" value="red">RED
+	<input type="radio" name="f_color" value="blue">BLUE
+	<input type="radio" name="f_color" value="green">GREEN
+	
+	
+	
+	
+	<script type="text/javascript">
+	// 방법1
+		$("#img").on("mouseover", function(){
+		$(this).attr("src", "../images/pic_bulbon.gif")
+		});
+	
+		$("#img").on("mouseout", function(){
+		$(this).attr("src", "../images/pic_bulboff.gif")
+	 });
+	
+	
+	
+	// 방법 2
+/*  	$("#img").on({
+		"mouseover focus" : function(){
+			$(this).attr("src", "../images/pic_bulbon.gif")
+			
+		},
+		"mouseout blur" : function(){
+			$(this).attr("src", "../images/pic_bulboff.gif")
+			
+		}
+		
+	});  */
+	
+	// 방법3
+/* 	$("#img").hover(
+			function(){
+				$(this).attr("src", "../images/pic_bulbon.gif")
+				
+			},
+			function(){
+				$(this).attr("src", "../images/pic_bulboff.gif")
+				
+			}
+	
+	); */
+	
+	// 키보드 이벤트: keydown, keypress, **keyup
+	// val() => value
+	$("#username").on("keyup", function(){
+		let username = $(this).val();
+		console.log(username);
+	});
+	
+	
+	// 비번확인
+	$("#pwd2").on("keyup", function(){
+		if($("#pwd").val() === $("#pwd2").val()){
+			$("#result").html("<b>암호가 맞네요</b>")
+			
+			
+			
+		}else{
+			$("result").html("<b>암호가 틀립니다.</b>")
+			
+			
+		}
+		
+	})
+	
+	// 상동을 누르면
+	
+	$("#chk").on("change", function(){
+		const msg = $("#addr").val();
+		
+		
+		if(this.checked){
+			$("#addr2").val(msg);
+			
+			
+		}else{
+			$("#addr2").val("");
+			
+		}
+	});
+	
+	
+	// 라디오
+	
+	$("input[name='f_color']").on("change", function(){
+	// 라이오버튼은 하나만 선택할 수 있다.
+	
+	if(this.checked){
+		//const color = this.value;
+		const color = $(this).val();
+		$("#title").css("color", color);
+	}
+
+	});
+	
+	
+	
+	
+	
+	
+	</script>
+</body>
+</html>

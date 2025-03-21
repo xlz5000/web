@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery-append</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+<!-- 
+	append() :  선택한 요소의 자식요소(선택한 요소 안)로서 맨 마지막에 추가된다. 
+	prepend() : 선택한 요소의 자식요소(선택한 요소 안)로서 맨 처음에 추가된다.
+	before() : 선택한 요소 앞에 추가(선택한 요소 밖) (형제) 
+	after() : 선택한 요소 뒤에 추가(선택한 요소 밖) (형제)
+	
+	eq(index) => index번째 선택
+	get(index) => index번째 선택
+-->
+</body>
+
+<p>밖내용1</p>
+<div id="wrap">
+	<p>내용1</p>
+	<p>내용2</p>
+	<p>내용3</p>
+	<p>내용4</p>
+	<p>내용5</p>
+</div>
+<p>밖 내용1</p>
+	
+	
+	<script type="text/javascript">
+		$("#wrap p:eq(2)").css("background-color", "tomato");
+		$("#wrap").prepend("<p>내용0</p>");
+		$("#wrap").append("<p>내용6</p>");
+		$("#wrap").before("<p>내용@</p>");
+		$("#wrap").after("<p>내용@@</p>");
+	
+	</script>
+</html>

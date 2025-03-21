@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery-grep</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<!-- 
+	grep() : jQuery에서 배열을 필터링할 때 사용, filter()와 비슷한 역할을 한다.
+	grep(array, callbackfunction, invert)
+	 - array : 배열
+	 - callbackfunction : 각 요소에 대해 실행되는 함수, 
+	 					true를 반환하면 해당 요소가 결과에 포함됨
+	 
+	 - invert : true일경우, callbackfunction이 false를 반환한 요소만 포함
+ -->
+
+</body>
+
+<script type="text/javascript">
+	let numbers = [1,2,3,4,5,6];
+	let evens = $.grep(numbers, function(obj, index){
+		 return obj % 3 === 0; // 3의 배수
+});
+
+	let odds = $.grep(numbers, function(obj, index){
+		 return obj % 3 === 0; // 3의 배수 제외한 나머지 다
+},true);
+	
+	let fruits = ["apple", "banana", "cherry", "grape"];
+	// "a"라는 문자열을 포함하고 있는 요소만 추출
+	let result = $.grep(fruits, function(obj, index){
+		return obj.includes("a");
+	});
+	
+	
+	console.log(`evens : ${evens}`);
+	console.log(`odds : ${odds}`);
+	console.log(`result : ${result}`);
+
+</script>
+</html>
