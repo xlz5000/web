@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>table 태그</title>
+<style type="text/css">
+	table, th, td{
+	border: 1px solid red;
+	border-collapse: collapse;
+	}
+	
+	table{
+		width: 400px;
+		text-align: center; /* 테이블안 글자만 가운데 정렬 */
+	}
+	
+	table{
+		margin: 0px auto; /*0px  상하여백 auto 좌우여백*/
+	}
+</style>
+</head>
+<body>
+
+
+<!--  
+	table 태그 안에 사용되는 태그
+	- thead : 테이블의 머리글, 생략 가능 
+	- tbody : 테이블의 본문
+	- tfoot : 테이블의 꼬리글, 생략 가능 
+	만약에 thead, tbody, tfoot이 없으면 모두 다 tbody에 존재하는 것으로 간주
+	
+	thead, tbody, tfoot 안에 사용되는 태그
+	- tr :  행을 의미(행 안에 열(컬럼이 존재한다.))
+	tr 안에 사용되는 태그
+	- th : 보통 컬럼명, 굵게 가운데 정렬
+	- td : 일반적인 컬럼에 사용된다.
+	
+	테이블에 테두리를 지정하지 않으면 테두리가 나타나지 않는다.
+	너비를 지정하지 않으면 해당 글자의 내용의 크기만 갖는다.
+	
+ -->
+ 
+ 
+ <table>
+ <caption>회원정보</caption>
+
+ 	<tbody><!--/*foot, head 뒤바꿔도 웹에서는 그렇게 안됨.*/  -->
+ 	 	<tfoot>
+  		<tr>
+ 			<td>몰라</td><td>몰라</td><td>몰라</td>
+ 		</tr>
+ 		</tfoot>
+ 		<tr>
+ 			<td>홍길동</td><td>19</td><td>츙청도</td>
+ 		</tr>
+ 		 <tr>
+ 			<td>임꺽정</td><td>34</td><td>함경도</td>
+ 		</tr>
+ 		 <tr>
+ 			<td>일지매</td><td>23</td><td>경기도</td>
+ 		</tr>
+
+ 	</tbody>
+ 	
+ 	 	<thead>
+ 		<tr>
+ 			<th>이름</th><th>나이</th><th>주소</th>
+ 		</tr>
+ 	</thead>
+ 	
+ </table>
+ 
+ 
+ 
+  <table> <!--/*순서가 뒤바쀨 수 있음*/  -->
+ 
+ 		<tr>
+ 			<th>이름</th><th>나이</th><th>주소</th>
+ 		</tr>
+ 		<tr>
+ 			<td>홍길동</td><td>19</td><td>츙청도</td>
+ 		</tr>
+ 		 <tr>
+ 			<td>임꺽정</td><td>34</td><td>함경도</td>
+ 		</tr>
+ 		 <tr>
+ 			<td>일지매</td><td>23</td><td>경기도</td>
+ 		</tr>
+
+  		<tr>
+ 			<td>몰라</td><td>몰라</td><td>몰라</td>
+ 		</tr>
+ 	
+</table>
+
+
+
+</body>
+</html>

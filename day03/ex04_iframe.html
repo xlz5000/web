@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>다른 페이지를 가져오는 iframe</title>
+</head>
+<body>
+
+<!--   
+	현재 페이지에서 다른 페이지를 표시할 내용
+	<iframe src=""></iframe>
+	속성; width, height, style="border:none"
+	name과 target 속성도 이용가능
+-->
+
+	<h1>여기는 ex04_iframe 문서 입니다.</h1>
+	<p>iframe 태그는 다른 웹 페이지를 가져올 수 있습니다.</p>
+	<hr>
+	<iframe src="ex01_list_exam.html"></iframe>
+	<hr>
+
+	<iframe src="ex01_list_exam.html"
+	width="800px" height="1200px" style="border:none;"></iframe>
+	<hr>
+	<iframe src="ex01_list_exam.html"
+		width="800px" height="600px" style="border:none;" name="doc"></iframe>
+	<hr>
+	<p><a href="ex02_table_exam.html" target="doc">문서2</a></p>
+	<p><a href="ex03_object.html" target="doc">문서3</a></p>
+	
+	
+</body>
+</html>

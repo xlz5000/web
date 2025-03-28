@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form</title>
+</head>
+<body>
+
+
+<!--  
+	form : 사용자들에게 정보를 입력받아서 서버(spring)에게 정보를 전달하는 역할을 한다.
+	<form [action=""][method=""][enctype=""]>
+	form 요소들
+	</form>
+	
+	1.action=정보가 전달된 서버 페이지의 경로
+	2.method = 정보 전달 방식
+			-get(생략) : 정보를 head에 담아서 보낸다.
+						적은 용량, 주소창에 보내는 정보가 보인다. 보안에 취약, 빠르다.
+			-post : 정보를 body에 담아서 보낸다.
+					대용량, 주소창에 정보가 보이지 않는다. get 느리다.
+	3. enctype => 평소에는 사용 안함, 파일 업로드할 때 사용
+	4. form 안에 사용되는 요소들 : input, label, select, textarea, fieldset, legand ...
+	5. input 태그의 type 속성들
+		text, password, checkbox, radio, hidden, file, submit, reset, number,
+		button,color, date, time, email, url, range, search, ...
+		
+		
+	type 속성 중 name 속성 :  서버에 전달될 때 사용되는 이름
+	type 속성 중 value 속성 : 서버에 전달될 때 사용되는 값 value
+	데이터가 서버에 전달 될때 : ~~~~~~~~~~ ? name = value&name=value
+	
+	
+	checkbox, select 경우 같은 이름에 값이 여러개가 저장될 경우, 서버에서는 배열로 받는다.
+	radio는 하나만 선택하는 것이다.
+	
+	redio, checkbox => checked 속성으로 선택된 요소를 알 수 있다.
+	select 경우는 selected 속성으로 선택된 요소를 알 수 있다.
+	select 경우 size 속성은 화면에 표시되는 갯수를 말한다.
+	select 경우는  multiple 속성을 사용하면 ctrl 키를 이용해서 동시에 여러개 선택가능
+	select 경우는 multiple 속성이 없으면 하나만 선택
+	
+	submit : form 태그 안에 입력한 정보를 action 속성이 지정한 서버 페이지 정보를 전달하는 역할
+			value는 버튼 안에 들어가는 텍스트
+	reset :  form 태그 안에 입력한 정보들을 초기화 한다.
+	
+	
+	disabled : 커서가 들어가지 않아서 입력할 수 없다.
+	readonly: 오직 읽기만 가능
+	placeholder :  힌트 표시
+	required : 반드시 입력해야 하는 태그에 붙이는 속성
+				입력이 안되면 서버에 넘어가지 않고 입력하라는 표시가 나온다.
+	pattern : [0-9](숫자 의미), {3} (자리수), [A-Za-z](영문자대소문자)
+				예) 전화번호 : [0-9]{3}-[0-9]{4}-[0-9]{4}
+				
+				
+	form 태그 속성에 autocomplete="on|off"(자동완성기능)
+	form 요소들을 그룹으로 묶을 수 있는 태그 : <fieldset>, <legend>
+-->
+
+
+
+<form action="#" method="post" autocomplete="off">
+	<p>아이디 : <input type="text" placeholder="아이디입력" name="id"></p>
+	<p>패스워드 : <input type="password" placeholder="패스워드입력" name="pw" required></p>
+
+
+	<input type="submit" value="로그인">
+	
+<hr>
+</form>
+
+
+<form action="#" method="get" autocomplete="off">
+
+	<fieldset style="width: 400px">
+
+		<legend>로그인</legend>
+		<label>아이디 :<input type="text" placeholder="아이디입력" name="id" required>  </label><br>
+		
+		<!--  label과 input 연결 : label for="user_pw" input id="값" 두 값이 같아야 한다.-->
+		<label for="user_pw">패스워드 : </label> 
+		<input type="password" id ="user_pw" placeholder="패스워드입력" name="pw" required>
+
+	</fieldset>
+	<fieldset>
+	
+		<!-- 	number는 숫자만 받는다
+				readonly, disabled => 둘다 수정 불가능
+				disabled => 서버에 전달 되지 않는다.
+		
+		
+		-->	
+		<legend>회원가입</legend>
+		<label>이름: <input type="text" name="name" value=" 홍길동" readonly> </label>
+		<label>나이: <input type="number" name="age" value=" 27" disabled> </label>
+	
+	</fieldset>
+	
+	
+	<fieldset>
+	
+		<!-- 	
+			size :  필드의 길이
+			maxlength :최대글자 수
+		
+		
+		-->	
+		<legend>회원가입2</legend>
+		<label>이름: <input type="text" name="id2" size="5" maxlength="5"> </label>
+		<label>패스워드2: <input type="password" name="pw2" size="20" maxlength="5"> </label>
+		<label>나이2: <input type="number" name="age2" size="20" min="10" max="19"> </label>
+		
+		
+		<hr>
+		
+		<label>생년원일: <input type="number" size="5" maxlength="6"> </label>
+		<label>생년월일: <input type="text" size="10" pattern="[0-9]{6}"> </label>
+	
+	
+		
+	</fieldset>
+	<input type="submit" value="보내기">
+
+</form>
+
+</body>
+</html>
+

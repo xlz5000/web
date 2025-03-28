@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ul를 이용한 메뉴 만들기</title>
+<style type="text/css">
+
+	ul{
+		list-style-type: none;
+		background-color: #999999;
+		overflow: hidden;
+		padding :  0px;
+		margin:0px;
+	}
+	
+	/*한줄만들기*/
+	/*li{
+	float: left;
+	}*/
+	
+	
+	/*
+		ctrl+shift+r 강력한 세로 고침
+	*/
+	
+	li{
+		display: inline-block;
+	}
+	
+
+	
+	a{
+	text-decoration:none;
+	color: white;
+	padding: 16px 50px;
+	display: block;
+	}
+	
+	
+	a:hover{
+	
+		/*font-size: 20px;*/
+		border-bottom: 5px solid lightblue;
+	}
+</style>
+</head>
+<body>
+
+	<h2>네비게이션 메뉴</h2>
+	<ul>
+		<li><a href="#">HOME</a></li>
+		<li><a href="#">News</a></li>
+		<li><a href="#">Content</a></li>
+		<li><a href="#">About</a></li>
+	</ul>
+
+</body>
+</html>

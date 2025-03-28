@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>음악, 동영상 삽입</title>
+</head>
+<body>
+
+<!-- 
+	object 태그는 오디오, 비디오, PDF 등 다양한 멀티미디어 삽입
+	<object width="" height="" data="">
+	embed 태그는 초기버전부터 사용해 왔다. 오래된 브라우저까지 고려할 때 사용하기 좋다.
+	<embed src="" width="" height="">
+	
+	
+	audio 태그
+	<audio src=""></audio>
+	video 태그
+	<video src=""></video>
+	
+	
+	-controls :컨트롤러
+	-autoplay: 자동실행
+	-loop: 반복 실행
+	-muted: 음소거, autoplay할때 같이 사용해야 함.
+	
+ -->
+
+
+
+	<!-- <object width="900" height="800" data="../multi/product.pdf"></object> -->
+	<!--<embed src="../multi/spring.mp3">-->
+	
+	
+	<video src="../multi/flower.mp4" controls witdh="400px"></video>
+	<hr>
+	
+	
+	<video src="../multi/flower.mp4" controls autoplay muted width="400px"></video>
+	<hr>
+	
+	
+	<!-- 여러개의 형식을 추가할 때 (브라우저 호환성을 높일때) -->
+	<video controls autoplay muted width="400px">
+		<source src="../multi/flower.mp4">
+		<source src="../multi/flower.ogg">
+		<source src="../multi/flower.webm">
+	</video>
+	
+	
+	<audio src="../multi/spring/mp3" controls autoplay muted ></audio>
+	<hr>
+	
+	<!-- YouTube:iframe -->
+	<iframe width="500px" height="320px"
+	src="https://www.youtube.com/embed/E4PCwQHVoIU?si=mbV-RmD-MjgLG6_D"></iframe><br>
+	
+	<!-- 자동실행: ?autoplay=1&mute=1 -->
+	
+		<iframe width= "500px" height="320px"
+		src="https://www.youtube.com/embed/E4PCwQHVoIU?si=mbV-RmD-MjgLG6_D?autoplay=1&mute=1"></iframe><br>
+		
+		
+	<!-- 무한반복 loop = 1 & playlist -->
+	
+		<iframe width= "500px" height="320px"
+		src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1&loop=1&playlist=tgbNymZ7vqY"></iframe><br>
+	
+</body>
+</html>

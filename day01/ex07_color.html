@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>색상: colors</title>
+</head>
+<body  style="background-color:skyblue">
+<!-- 
+1. color names :  색 이름을 사용
+	https://www.w3schools.com/colors/colors_names.asp 
+2. 배경색(style="background-color:색이름;"), 글자색(style="color:색이름;")
+	테두리(border)는 선 색, 선 종류, 선 두께를 보통 함께 사용한다.
+	선 종류; solid(실선), dotted(점선), dashed(박음질선), double(이중선)
+ -->
+ <h2>배경색, 글자색, 테두리색 지점</h2>
+ <p style="background-color:skyblue;">배경색, 글자색, 테두리색 지점(배경색)</p>
+ <p style="color: red;">배경색, 글자색, 테두리색 지점(글자색)</p>
+ <p style="background-color: lightgray; color:white;">배경색, 글자색, 테두리색 지점(배경색, 글자색)</p>
+ <p style="border:red;">배경색, 글자색, 테두리색 지점(테두리색 X)</p>
+ <p style="border:red solid">배경색, 글자색, 테두리색 지점(테두리색 O)</p>
+ <p style="border: red 1px">배경색, 글자색, 테두리색 지점(테두리색 X)</p>
+ <p style="border: red solid 1px">배경색, 글자색, 테두리색 지점(테두리색 O)</p>
+ <p style="border: red dotted 1px">배경색, 글자색, 테두리색 지점(테두리색 O)</p>
+ <p style="border: red dashed 1px">배경색, 글자색, 테두리색 지점(테두리색 O)</p>
+ <p style="border: red double 3px">배경색, 글자색, 테두리색 지점(테두리색 O)</p>
+ 
+ 
+ <!-- 3. RGB(red, green, blue), RGBA(red, green, blue, alpha(투명도))
+ 		각 자리는 0-255 숫자로 표현, 투명도 : 0.0 ~ 1.0 -->
+ 		
+ <p style="background-color: rgb(255,0,0)">이것은 RGB 색상 표현 입니다</p>
+ <p style="background-color: rgb(255,255,0)">이것은 RGB 색상 표현 입니다</p>
+ <p style="background-color: rgb(0,0,0)">이것은 RGB 색상 표현 입니다(검은색, 각각 아무색도 안 줬으므로)</p>
+ <p style="background-color: rgba(255,255,0, 0.0)">이것은 RGB 색상 표현 입니다</p>
+ <p style="background-color: rgba(255,255,0, 0.3)">이것은 RGB 색상 표현 입니다</p>
+ <p style="background-color: rgba(255,255,0, 1.0)">이것은 RGB 색상 표현 입니다</p>
+ 
+ 
+ <!-- 4. HEX(rr, gg, bb), HEXA(rr, gg, bb, aa)
+ 		각 자리에 가중치가 16진수(0-9, a, b, c, d, e, f) -->
+ 		
+ <p style="background-color: #ff0000">이것은 RGB 색상 표현 입니다</p>
+ <p style="background-color: #f00">이것은 RGB 색상 표현 입니다</p>
+ <p style="background-color: #ffff00">이것은 RGB 색상 표현 입니다</p>
+ <p style="background-color: #ff000000">이것은 RGB 색상 표현 입니다</p>
+ <p style="background-color: #ff000044">이것은 RGB 색상 표현 입니다</p>
+ <p style="background-color: #ff0000ff">이것은 RGB 색상 표현 입니다</p>
+
+ 
+</body>
+</html>

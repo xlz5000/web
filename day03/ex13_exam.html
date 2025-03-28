@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#container {
+	width: 600px;
+	margin: 0 auto;
+}
+
+fieldset {
+	margin: 20px 0px;
+}
+
+legend {
+	font-weight: bold;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	margin: 10px;
+}
+
+input {
+	padding: 5px;
+}
+
+li label {
+	width: 120px;
+	float: left;
+}
+
+select {
+	width: 100px;
+	height: 30px;
+}
+
+#buttons {
+	width: 600px;
+	margin: 20px auto;
+	text-align: center;
+}
+
+#buttons input {
+	width: 150px;
+	height: 50px;
+	font-size: 20px;
+}
+
+#buttons input:hover {
+	background-color: tomato;
+	color: white;
+	border: 1px solid white;
+}
+</style>
+</head>
+<body>
+	<div id="container">
+		<h2>로그인</h2>
+		<form action="#" autocomplete="off" method="post">
+			<fieldset>
+				<legend>로그인</legend>
+				<label> ID : <input type="text" name="id" required></label>
+				<label> PW : <input type="password" name="pw" required></label>
+				<input type="submit" value="로그인">
+			</fieldset>
+		</form>
+
+		<h2>회원가입</h2>
+		<form action="#" method="post" autocomplete="off">
+			<fieldset>
+				<legend>사용자 정보</legend>
+				<ul>
+					<li><label for="id">아이디 : </label> <input type="text" id="id"
+						name="id" placeholder="4자~10사이 공백 없이" required></li>
+					<li><label for="email">이메일 : </label> <input type="email"
+						id="email" name="email" required></li>
+					<li><label for="pwd">비밀번호 : </label> <input type="password"
+						id="pwd" placeholder="문자와 숫자, 특수기호 포함" name="pwd" required>
+					</li>
+					<li><label for="pwd2">비밀번호확인 : </label> <input type="password"
+						id="pwd2" name="pwd2" required></li>
+					<li><label for="path">가입경로</label> <select id="path"
+						name="path">
+							<option>블로그</option>
+							<option>SNS</option>
+							<option>Email</option>
+							<option>기타</option>
+					</select></li>
+					<li><label for="memo">메모</label> <textarea rows="4" cols="40"
+							placeholder="남길 말씀이 있다면 여기에"></textarea></li>
+				</ul>
+			</fieldset>
+			<fieldset>
+				<legend>이벤트와 새로운 소식</legend>
+				<label><input type="radio" name="mailing" value="mailing_y">메일수신
+				</label> <label><input type="radio" name="mailing" value="mailing_n">메일수신
+					안함</label>
+			</fieldset>
+			<div id="buttons">
+				<input type="submit" value="가입하기"> <input type="reset"
+					value="취소">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

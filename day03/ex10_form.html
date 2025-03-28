@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form</title>
+</head>
+<body>
+
+	<form action="#">
+		<fieldset>
+			<legend>상품 선택</legend>
+			<p><b>주문할 상품을 선택해 주세요</b></p>
+			
+			<!-- 
+			 checkbox의 이름을 모두 같다
+			name, value 모두 사용
+			 -->
+			
+			<ul>
+			
+				<li><label><input type="checkbox" name="prod" value="s_3" checked>선물용 3kg</label></li>
+				<li><label><input type="checkbox" name="prod" value="s_5">선물용 5kg</label></li>
+				<li><label><input type="checkbox" name="prod" value="f_3">가정용 3kg</label></li>
+				<li><label><input type="checkbox" name="prod" value="f_5">가정용 5kg</label></li>
+				
+			</ul>
+			<p><b>포장 선택</b></p>
+			<ul>
+			
+				<li><label><input type="radio"  name="gift" value="y" checked>선물포장</label></li>
+				<li><label><input type="radio"  name="gift" value="n">선물포장안함</label></li>
+				
+			</ul>
+			<hr>
+			<p><b>받을 장소를 선택하세요</b></p>
+			<select name="addr">
+<!-- 				value를 입력하지 않으면 텍스트가 value가 된다.-->			
+				<option value="1">집</option>
+				<option value="2">회사</option>
+				<option value="3">회사2</option>
+				<option value="4">동생집</option>
+			</select>
+			<hr>
+		
+		
+			<p><b>상품을 선택해주세요</b></p>
+			<select name="produ" multiple size=6>
+<!-- 				value를 입력하지 않으면 텍스트가 value가 된다.-->			
+				<option value="1">선물용 3kg</option>
+				<option value="2">선물용 5kg</option>
+				<option value="3">선물용 8kg</option>
+				<option value="4">가정용 3kg</option>
+				<option value="5">가정용 5kg</option>
+				<option value="6">가정용 8kg</option>
+			</select>
+			
+			<!--  웹 브라우저에는 안 보이지만 서버에 이름과 값이 넣어간다. -->
+		<p><input type="hidden" name="cPage" value="5"></p>
+		
+		</fieldset>
+		<p><input type="submit" value="보내기"></p>
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자(selector) : id</title>
+<style type="text/css">
+
+/* 해당하는 태그를 선택; 요소 선택자*/
+	h2{
+	color: tomato;
+	}
+	
+	
+	/* id 선택자 */
+	#fg_01{
+	
+		background-color: lightgreen;
+	}
+
+	/* class 선택자 */
+	.bg_01{
+	
+	
+	background-color: lightgray;
+		
+	}
+	
+</style>
+</head>
+<body>
+
+
+<!-- 
+	id는 하나만 선택할 때 사용
+	
+	* 단골 시험문제
+	style 태그에서는 id를 #(샵)으로 표현
+	
+	
+	class 는 여러 요소를 선택할 때 사용
+	style 태그에서는 class .(점)으로 표현
+	
+	
+	하나의 요소에 id, class 동시에 사용 가능 , 우선순위느 id가 먼저다.
+ -->
+ 
+<!--  id랑 class 두개 있으면 id가 더 우선순위 높다. -->
+ 
+ <h2>한국 ICT 인재 개발원</h2>
+ <p class="bg_01">한국 ICT 인재 개발원</p>
+ <h3 id="fg_01">한국 ICT 인재 개발원</h3>
+ <p class="bg_01">한국 ICT 인재 개발원</p>
+ <h2 id="bg_01">한국 ICT 인재 개발원</h2>
+ <h3>한국 ICT 인재 개발원</h3>
+ 
+ 
+</body>
+</html>

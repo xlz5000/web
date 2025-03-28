@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#container{
+		width: 600px;
+		margin: 0 auto;
+	}
+	#buttons{
+		width: 600px;
+		margin: 20px auto;
+		text-align: center;
+	}
+	#buttons input{
+	   width: 150px;
+	   height: 50px;
+	   font-size: 20px;
+	} 
+	ul{ list-style-type: none;}
+	li{margin: 10px;}
+	input {padding: 5px; }
+/*     .f{width: 120px; float: left;} */
+</style>
+</head>
+<body>
+	<div id="container">
+		<h1>프런트 엔드 개발자 지원서</h1>
+		<p>HTML, CSS, JavaScript에 대한 기술적 이해와 경험이 있는 분을 찾습니다</p>
+		<hr>
+		<form action="">
+			<h3>개인 정보</h3>
+			<ul>
+				<li>
+					<label class="f" for="uname">이름</label>
+					<input type="text" id="uname" name="uname" placeholder="공백없이 입력하세요">
+				</li>
+				<li>
+					<label class="f"  for="uphone">연락처</label>
+					<input type="text" id="uphone" name="uphone" >
+				</li>
+			</ul>
+			<h3>지원 분야</h3>
+			<ul>
+				<li>
+					<input type="radio" id="job1" name="job" value="wp">
+					<label for="job1">웹 퍼블리싱</label>
+				</li>
+				<li>
+					<input type="radio" id="job2" name="job" value="dp">
+					<label for="job2">웹 애플리케이션 개발</label>
+				</li>
+				<li>
+					<input type="radio" id="job3" name="job" value="se">
+					<label for="job3">개발 환경 개선</label>
+				</li>
+			</ul>
+			<h3>지원 동기</h3>
+			<textarea rows="5" cols="50" placeholder="지원동기를 간단히 써 주세요."></textarea>
+			<div id="buttons">
+			  <input type="submit" value="접수하기">
+			  <input type="reset" value="다시 쓰기">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

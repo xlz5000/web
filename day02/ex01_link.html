@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>link 태그: a 태그</title>
+</head>
+<body>
+<!--
+	<a href="url" target="value">텍스트(이미지)</a>
+	텍스트나 이미지를 클릭했을 때 href가 가리치는 위치의 웹 페이지나 사이트 주소를 연결하는 역할
+	-href = "이동할 페이지나 사이트 주소, 만약 #이면 현재 페이지를 뜻한다.
+	-target="_blank"(새창)
+	-target="_self"(디폴트, 현재 창)
+	-target="_parent"(부모창)
+	
+	-href="#id" => id가 있는 위치로 이동
+  -->
+ <a href="https://www.naver.com" target="_blank">naver</a>
+ <a href="/01_html_css_js/day01/ex03_p.html" target="_blank">문서1</a><!-- 절대경로 -->
+ <a href="../day01/ex06_styles.html" targer="_blank">문서2</a><!-- 상대경로 -->
+ <hr>
+ 
+ <a href="https://www.naver.com" >naver(target X)</a>
+ <a href="/01_html_css_js/day01/ex03_p.html" >문서1(target X)</a><!-- 절대경로 -->
+ <a href="../day01/ex06_styles.html" >문서2(target X)</a><!-- 상대경로 -->
+ <hr>
+ 
+ <p>같은 문서에서 다른 위치로 이동하기(name, target 사용)</p>
+ <p><a href="#first">첫번째 섹터</a></p>
+ <p><a href="#second">두번째 섹터</a></p>
+ <p><a href="#third">세번째 섹터</a></p>
+ <br><br><br><br><br>
+ 
+ <h2><a id="first">첫번째 섹터</a><a href="#">현재문서 맨 처음</a></h2>
+ <p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
+ <p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
+ <p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
+ <p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
+ 
+ <h2><a id="second">두번째 섹터</a><a href="#">현재문서 맨 처음</a></h2>
+ <p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
+ <p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
+ <p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
+ <p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
+ 
+ <h2><a id="third">세번째 섹터</a><a href="#">현재문서 맨 처음</a></h2>
+ <p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
+ <p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
+ <p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
+ <p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
+
+
+
+</body>
+</html>

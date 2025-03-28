@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form</title>
+</head>
+<body>
+<form action="#" method="post" enctype="multipart/form-data">
+	<fieldset>
+		<legend>나머지 속성들</legend>
+		<ul>
+		
+		<!-- 파일 업로드 할 때는 반드시 method="post" , enctype="multipart/form-data" -->
+			<li><label>업로드 : <input type="file" name="file"></label></li>
+			<li><label>날짜1 : <input type="date" name="file"></label></li>
+			<li><label>날짜2 : <input type="month" name="file"></label></li>
+			<li><label>날짜3 : <input type="week" name="file"></label></li>
+			<li><label>시간1 : <input type="time" name="file"></label></li>
+			<li><label>시간2 : <input type="datetime-local" name="file"></label></li>
+			
+			
+			<li><label>날짜4 : <input type="date" min="2025-03-04" max="2025-03-08" name="date4"></label></li>
+			<!-- 슬라이드 막대 -->
+			<li><label>범위 : <input type="range" min="0" max="100" step="1" value="20"></label></li>
+		</ul>
+		</fieldset>
+		<p><input type="image" src="../image/login.png" alt="로그인"></p>
+		<p><input type="button" value="제출하기"></p>
+		<p><input type="submit" value="제출하기"></p>
+</form>
+
+</body>
+</html>

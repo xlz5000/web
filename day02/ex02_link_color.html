@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>a 링크 색 지정/ 삭제</title>
+<style type="text/css">
+	a:link{
+	color:b;
+	}
+	a:visited{
+	color:b;
+	}
+	a:active{
+	color:b;
+	}
+	a:hover{
+	background-color:lightgray;
+	}
+	
+	a{text-decoration: none;}
+</style>
+</head>
+<body>
+
+<!-- 
+	a 링크 기본색
+	* 한번도 방문한 적이 없으면: 밑줄, blue
+	* 한번이라도 방문한 적이 있으면 : 밑줄, purple
+	* 이동을 하기 위해서 마우스를 눌렀을 때: 밑줄, red
+	
+	a:link =>한번도 방문한 적이 없으면(변경)
+	a:visited => 한번이라도 방문한 적이 있으면(변경)
+	a:active =>이동을 하기 위해서 마우스를 눌렀을 때 (변경)
+	a: hover => 마우스를 해당 영역에 올렸을 때 속성 지정
+	
+	text-decoration:none(링크 밑줄 삭제)
+ -->
+ <p><a href="ex00_link.html">문서0</a></p>
+ <p><a href="ex01_link.html">문서1</a></p>
+</body>
+</html>

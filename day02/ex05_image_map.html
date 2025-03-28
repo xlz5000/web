@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지 맵</title>
+</head>
+<body>
+<!-- image map: 하나의 이미지 안에 여러개의 a태그를 설정하는 것
+				사각형 영역(rect), 원 영역(circle) 
+ -->
+
+	<a href="https://www.naver.com">
+		 <img alt="" src="../images/workplace.jpg" usemap="#i msp">
+	</a>
+	
+	<map name="i_map">
+		<!-- 링크영역 설정 ; 사각형(좌상, 우하) -->
+		<area alt="google" shape="rect" coords="28,42, 272,342" href="https://google.com" title="구글">
+		
+		<!-- 링크영역 설정 ; 원(중심점, 반지름) -->
+		<area alt="daum" shape="circle" coords="329, 298, 40" href="https://daum.com" title="다음">
+	</map>
+
+</body>
+</html>
