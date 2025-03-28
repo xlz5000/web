@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+/* 
+ *{
+box-sizing: border-box;
+
+
+}  */
+#cards {
+	display: flex;
+	flex-wrap: wrap;
+
+
+}
+
+.card {
+	background-color: lightgray;
+/*  	margin: 1%;  */
+	padding: 20px;
+	border-radius: 10px;
+	width: 31%;
+}
+
+img {
+	border-radius: 10px;
+	width: 100%;
+}
+
+.card:nth-child(n+4){
+	margin-top: 30px;
+}
+
+.card:not(:nth-child(3n+3)){
+ 	margin-right: 2%;
+
+}
+
+
+</style>
+</head>
+<body>
+
+	<div id="cards">
+		<div class="card">
+			<img alt="" src="../images/coffee-blue.jpg">
+			<h2>가로 배열 제목</h2>
+			<p>가로 배열 레이아웃을 flexbox로 구현합니다.</p>
+		</div>
+
+		<div class="card">
+			<img alt="" src="../images/coffee-blue.jpg">
+			<h2>가로 배열 제목</h2>
+			<p>가로 배열 레이아웃을 flexbox로 gksmsw구현합니다.</p>
+		</div>
+
+		<div class="card">
+			<img alt="" src="../images/coffee-blue.jpg">
+			<h2>가로 배열 제목</h2>
+			<p>가로 배열 레이아웃을 flexbox로 구현합니다.</p>
+		</div>
+		<div class="card">
+			<img alt="" src="../images/coffee-blue.jpg">
+			<h2>가로 배열 제목</h2>
+			<p>가로 배열 레이아웃을 flexbox로 구현합니다.</p>
+		</div>
+		<div class="card">
+			<img alt="" src="../images/coffee-blue.jpg">
+			<h2>가로 배열 제목</h2>
+			<p>가로 배열 레이아웃을 flexbox로 구현합니다.</p>
+		</div>
+		<div class="card">
+			<img alt="" src="../images/coffee-blue.jpg">
+			<h2>가로 배열 제목</h2>
+			<p>가로 배열 레이아웃을 flexbox로 구현합니다.</p>
+		</div>
+	</div>
+
+</body>
+</html>

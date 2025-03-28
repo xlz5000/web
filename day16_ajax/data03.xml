@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<products>
+
+	<product name="제너시스" count="5">현대자동차</product>
+	<product name="K9" count="24">기아자동차</product>
+	<product name="BMW" count="15">BMW 코리아</product>
+	<product name="AUDI" count="12">아우디 코리아</product>
+
+
+
+
+
+</products>

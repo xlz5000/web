@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>json 파일 읽기</title>
+<style type="text/css">
+ table{
+ 	width: 800px; marign-top: 60px; border-collapse: collapse;
+ 
+ 
+ }
+ 
+ table, th, td{
+ border: 1px solid green;
+ text-align: center;
+ 
+ }
+
+
+
+</style>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+	<div id="btn">가져오기</div>
+	<div id="result"></div>
+	<script type="text/javascript">
+		$("#btn").on("click", function(){
+			$("result").empty();
+			$.ajax({
+				url : "data06.js",
+				method: "post",
+				//data : 
+				dataType: "json",
+				success : function(response){
+					let table ="<table>";
+					table +="<thead>";
+					table +="<tr>";
+					table +="<td>name</td><td>age</td><td>secretIndentity</td><td colspan='3'>powers</td>";
+					
+					table +="</tr>";
+					
+					table +="</thead>";
+					table +="<tbody>";
+					$.each(response, function(i, v){
+						let name = v.name;
+						let age = v.age;
+						let secretIdentity = v.secretIdentity;
+						let powers = v.powers;
+						
+						
+						table += "<tr>";
+						
+						table += "<td>" + name + "</td>";
+						table += "<td>" + age + "</td>";
+						table += "<td>" + secretIdentity + "</td>";
+						//table += "<td>" + powers + "</td>";
+						
+						$.each(powers, function(index, value){
+							table += "<td>" + value + "</td>";
+						})
+						
+						// 만약에 powers 길이가 3개보다 작으면, 빈칸으로 채우자
+						let em =  3 - powers.length;
+						for (let i = 0; i < em; i++) {
+							table += "<td></td>"
+						}
+						
+						
+						table += "</tr>";
+						
+						
+						
+					})
+					table +="</tbody>";
+					table +="</table>";
+					$("#result").append(table);
+					
+				},
+				error :function(){
+					alert("가져오기 실패");
+					
+					
+					
+				}
+			});
+			
+			
+		})
+		
+	
+	
+	
+	
+	
+	</script>
+</body>
+</html>

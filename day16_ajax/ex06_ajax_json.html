@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>json 파일 읽기</title>
+<style type="text/css">
+ table{
+ 	width: 600px; marign-top: 60px; border-collapse: collapse;
+ 
+ 
+ }
+ 
+ table, th, td{
+ border: 1px solid green;
+ text-align: center;
+ 
+ }
+
+
+
+</style>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<div id="btn">가져오기</div>
+	<div id="result"></div>
+	<script type="text/javascript">
+		$("#btn").on("click", function(){
+			$("#result").empty();
+			$.ajax({
+				url: "data05.js",
+				method: "post",
+				// data: 
+				dataType: "json",
+				success: function(response){
+					console.log(response);
+					
+					let table="<table>";
+					table+="<thead>";
+					table+="<tr>";
+					table+="<td>name</td><td>scope</td>"
+					table+="</tr>";
+					table+="</thead>";
+					table+="<tbody>";
+					// i => 배열일때 index, 객체일때 속성명
+					// v => 요소의 값
+					$.each(response, function(i, v){
+						let name = v.name;
+						let scope = v.scope;
+						let name2 = v["name"];
+						let scope2 = v["scope"];
+						table += "<tr>";
+						table +="<td>"+name+"</td>";
+						table +="<td>"+scope+"</td>";
+						table += "</tr>";
+						
+					});
+					
+					table+="</tbody>";
+						
+					table+="</table>";
+					
+					$("#result").append(table);
+					
+				},
+				error: function(){
+					alert("가져오기 실패");
+					
+					
+				}
+			})
+			
+			
+		})
+		
+	
+	
+	
+	</script>
+
+</body>
+</html>

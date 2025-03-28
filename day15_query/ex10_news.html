@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>한줄뉴스 -2</title>
+
+<style type="text/css">
+
+
+	#newsWrap{
+		height: 30px;
+		width: 600px;
+		position: relative;
+		overflow: hidden;
+	
+	
+	}
+	#box{
+		position: absolute;
+		width: 100%;
+		top: 100%;
+	
+	}
+
+
+</style>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div id="newsWrap">
+	<div id="box"></div>
+</div>
+	<script type="text/javascript">
+		const news =['헌재 "재판관 임명거부 위헌" 인정했지만…중대성 요건',
+			'韓측 "국정안정에 큰 힘"…국회측 "尹탄핵심판 메시지 나와"',
+			'대통령실 "韓대행 기각 환영…탄핵남발, 악의적 정치공세 입증"',
+			'韓탄핵 기각에 尹지지자들 환영…오늘도 도심 곳곳 찬반 집회'];
+
+		let index = 0;
+		
+		let timer;
+		function showNews(){
+			const box = $("#box");
+			box.css({top:"100%", transition:"none"});
+			box.text(news[index++]);
+			if(index === news.length) index = 0;
+			
+			setTimeout(()=>{
+				// top 속성값이 변할때 그 변화를 1초 동안 걸쳐 수행
+				// linear => 시작부터 끝까지 같은 속도
+				$("#box").css({top:"0", transition:"top 1s linear"});
+			}, 400);
+				
+			}
+		
+		
+		function start_news(){
+			
+			showNews();
+			timer = setInterval(showNews, 2000);
+		}
+		
+		
+		start_news();
+			
+			
+			
+			
+
+		
+		
+
+	</script>
+
+</body>
+</html>

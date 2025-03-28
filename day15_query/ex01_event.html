@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+<!-- 
+	.bind()는 지정한 이벤트가 발생할 때마다 지정한 함수가 실행되도록 이벤트 핸들러 연결
+	jQuery 3.0이후부터는 .on()를 권장한다.
+	단, 커스텀 이벤트를 하고 싶을 때 (아직 사용) =>커스텀 이벤트를 수동으로 실행하고 싶을때
+	.one()는 지정한 이벤트가 단 한번만 실행 되도록 이벤트 핸들러 연결
+ -->
+ <div>
+ 	<p><button id="btn1">클릭</button></p>
+ 	<p><button id="btn2">클릭</button></p>
+ 	<p><button id="btn3">클릭</button></p>
+
+ </div>
+ <script type="text/javascript">
+ 	$("#btn1").on("click",function(){
+ 		alert("1번 클릭");
+ 	});
+ 	
+ 	$("#btn2").bind("click",function(){
+ 		alert("2번 클릭");
+ 	});
+ 	
+ 	$("#btn3").one("click",function(){
+ 		alert("3번 클릭");
+ 	});
+ 	
+ 	
+ 
+ 
+ 
+ 
+ </script>
+ 
+</body>
+</html>

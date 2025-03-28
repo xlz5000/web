@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지롤링</title>
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing:  border-box;
+	
+	}
+	
+	
+	body{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		background-color: #f9f9f9;
+	}
+	
+	.slider{
+		position: relative;
+		width: 1000px;
+		height: 500px;
+		border-radius: 10px;
+		box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+		
+/* 		overflow: hidden; */
+	}
+	
+	
+	
+	.slides{
+		display: flex;
+		width: 100%;
+		height: 100%;
+		/*ease-in-out: 느리게 시작-빨라짐-느리게 끝*/
+		/*linear: 시작 끝이 같은 속도*/
+		/*ease: 자연스러운 시작과 끝(기본값)*/
+		/*ease-in: 느리게 시작해서 빨라짐*/
+		/*ease-out: 빠르게 싲가해서 느려짐*/
+		transition: transform 0.5 ease-in-out;
+	
+	
+	
+	}
+	
+	
+	.slide{
+		min-width:100%;
+		height: 100%;	
+	}
+	.slide img{
+		width:100%;
+		height: 100%;
+		object-fit: cover
+	}
+	
+	
+	
+	
+	
+</style>
+</head>
+<body>
+	<div class="slider">
+		<div class="slides" id="slides">
+			<div class="slide"><img alt="" src="../images/tree-1.jpg"></div>
+			<div class="slide"><img alt="" src="../images/tree-2.jpg"></div>
+			<div class="slide"><img alt="" src="../images/tree-3.jpg"></div>
+		
+		
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript">
+
+	const slides = document.querySelector("#slides");
+	const total = slides.children.length;
+	
+	let index = 0;
+	function showNextSlide(){
+		index = (index + 1) % total;
+		slides.style.transform = `translateX(-${index*100}%)`;
+		
+	}
+	
+	
+	setInterval(showNextSlide,3000)
+	
+
+</script>
+</html>

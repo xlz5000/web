@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#wrap {
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	width: 1000px;
+}
+
+#logo{
+width: 200px;
+}
+
+#logo img{
+display: black;
+max-width: 100%;
+height: auto;
+
+}
+
+ul {
+	display: flex;
+	list-style: none;
+	justify-content: flex-end;
+	flex:1;
+}
+
+
+li:not(:last-child){
+margin-right: 50px;
+
+}
+
+
+li a {
+	text-decoration: none;
+	display: flex;
+	flex-direction: column;
+	color: #111;
+	font-size: 28px;
+	font-weight: 700;
+	text-align: center;
+	line-height: 1.6;
+}
+</style>
+</head>
+<body>
+
+
+
+	<div id="wrap">
+
+		<div id="logo"><img src="../images/bear.jpg"></div>
+		<ul>
+			<li><a href=""><span>Service</span>서비스</a></li>
+			<li><a href=""><span>Price</span>요금</a></li>
+			<li><a href=""><span>Contact</span>문의</a></li>
+
+
+
+		</ul>
+
+
+	</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>text 파일 읽어오자</title>
+<style type="text/css">
+ table{
+ 	width: 800px; marign-top: 60px; border-collapse: collapse;
+ 
+ 
+ }
+ 
+ table, th, td{
+ border: 1px solid green;
+ text-align: center;
+ 
+ }
+
+
+
+</style>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<div id="btn">가져오기</div>
+	<div id="result"></div>
+	<script type="text/javascript">
+		$("#btn").on("click", function(){
+			$("#result").empty();
+			$.ajax({
+				url : "data07.txt",
+				method: "post",
+				//data : 
+				dataType : "text",
+				success: function(response){
+					let rows = response.split("/");
+					let table = "<table>";
+					table +="<thead>";
+					table +="<tr>";
+					table +="<th>no</th><th>name</th><th>age</th><th>addr</th>";
+					
+					table +="</tr>";
+
+					table +="</thead>";
+					table +="<tbody>";
+					
+/* 					for ( let k in rows) { // k는 인덱스값
+						table += "<tr>";
+						let cols = rows[k].split(",");
+						for ( let y in cols) {
+							table += "<td>" + cols[y] + "</td>"
+						}
+						table += "</tr>";
+					}
+					 */
+					 
+					 
+					 $.each(rows, function(i, v){
+							table += "<tr>";
+							let cols = v.split(",");
+							$.each(cols, function(j, val){
+								table += "<td>" + val + "</td>"
+							})
+							table += "</tr>";
+						 
+					 });
+					
+					
+					
+					
+					table +="</tbody>";	
+					table += "</table>";
+					
+					$("#result").append(table);
+					
+				},
+				error : function(){
+					alert("가져오기 실패");
+					
+					
+				}
+			})
+		});
+		
+		
+	
+	
+	
+	</script>
+
+
+
+</body>
+</html>

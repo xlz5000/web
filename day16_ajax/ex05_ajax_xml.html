@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>xml 파일 가져오기</title>
+
+<style type="text/css">
+ table{
+ 	width: 600px; marign-top: 60px; border-collapse: collapse;
+ 
+ 
+ }
+ 
+ table, th, td{
+ border: 1px solid green;
+ text-align: center;
+ 
+ }
+
+
+
+</style>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<button id="btn">가져오기</button>
+<div id="result"></div>
+
+
+<script type="text/javascript">
+
+$("#btn").on("click", function(){
+	$("#result").empty();
+	$.ajax({
+		
+		
+		url: "data04.xml",
+		method: "post",
+		dataType: "xml",
+		success: function(response){
+			
+			let p ="";
+			$(response).find("weather").each(function(){
+				let year = $(this).attr("year");
+				let month = $(this).attr("month");
+				let day = $(this).attr("day");
+				let hour =  $(this).attr("hour");
+				
+				
+				p = "<p>연도: "+ year + "</p>";
+				
+				
+				p += "<p>월: "+ month + "</p>";
+				p += "<p>일: "+ day + "</p>";
+				p += "<p>시간: "+ hour + "</p>";
+				
+			
+			})
+			
+			
+			
+			
+			let table ="<table>";
+			table+="<thead>";
+			table +="<tr>";
+			
+			
+			
+			
+			table +="</tr>";
+			
+			table+="<tr>"
+			table+="<th>지역</th><th>날씨</th><th>온도</th>";
+			table+="</tr>"
+			table+="</thead>";
+			table+="<tbody>";
+			
+			
+			$(response).find("local").each(function(){
+				table+="<tr>";
+				let local = $(this).text();
+				let desc = $(this).attr("desc");
+				let ta = $(this).attr("ta");
+				table+="<td>"+local+"</td>";
+				table+="<td>"+desc+"</td>";
+				table+="<td>"+ta+"</td>";
+
+				table+="</tr>";
+				
+			})
+			
+		
+			
+			
+			table+="</tbody>";
+			table+="</table>";
+			
+			$("#result").append(p);
+			
+			$("#result").append(table);
+			
+			
+		},
+		error: function(){
+			alert("가져오기 실패")
+			
+		}
+		
+		
+		
+		
+		
+	})
+	
+})
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<products>
+
+	<product name="제너시스" count="5"/>
+	<product name="K9" count="24"/>
+	<product name="BMW" count="15"/>
+	<product name="AUDI" count="5"/>
+
+
+
+
+
+</products>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>한줄뉴스 -2</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+	<div id="box"></div>
+	<script type="text/javascript">
+		const news =['헌재 "재판관 임명거부 위헌" 인정했지만…중대성 요건',
+			'韓측 "국정안정에 큰 힘"…국회측 "尹탄핵심판 메시지 나와"',
+			'대통령실 "韓대행 기각 환영…탄핵남발, 악의적 정치공세 입증"',
+			'韓탄핵 기각에 尹지지자들 환영…오늘도 도심 곳곳 찬반 집회'];
+	
+
+		
+		
+		let index = 0;
+		setInterval(() => {
+			$("#box").text(news[index++]);
+			if(index == news.length) index = 0;
+		},2000 );
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>xml 파일 읽기</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style type="text/css">
+	table{
+		width: 600px; margin-top: 50px; border-collapse: collapse;
+	}
+	
+	table, th, td{
+		border: 1px solid green;
+		text-align : center;
+	}
+	
+	
+	
+
+</style>
+</head>
+<body>
+
+	<div id="btn">가져오기</div>
+	<div id="result"></div>
+	
+	
+	<script type="text/javascript">
+		$("#btn").on("click", function(){
+			$("#result").empty(); //이걸로 인해 여러번 가져오기 눌러도 안 나옴
+			$.ajax({
+				url : "data03.xml",
+				method : "post",
+				// data : {name: "John", loaction: "Boston"}
+				// 만약에 많으면 var str = $("form").serialize();
+				dataType : "xml",
+				success : function(response){
+					//console.log(response);
+					let table ="<table>";
+					table += "<thead>";
+					table += "<tr>";
+					table += "<td>회 사</td><td>상품 </td><td>재 고</td>";
+					table += "</tr>";
+					table += "</thead>";
+					table += "<tbody>";
+					
+					$(response).find("product").each(function(){
+						let compay = $(this).text();
+						let product = $(this).attr("name");
+						let count = $(this).attr("count");
+						
+						table +="<tr>";
+						table+="<td>" + compay + "</td>";
+						table+="<td>" + product + "</td>";
+						table+="<td>" + count + "</td>";
+						table +="</tr>";
+						
+					})
+					
+					table += "</tbody>";
+
+					
+					table += "</table>";
+					
+					$("#result").append(table);
+					
+					
+				},
+				error :  function(){
+					alert("가져오기 실패");
+					
+					
+				}
+			})
+			
+		})
+	
+	
+	</script>
+
+		
+
+
+</body>
+</html>

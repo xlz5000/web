@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>show(), hide(), toggle</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<button id="btn1">감추기</button>
+	<button id="btn2">보이기</button>
+	<button id="btn3">감추기/보이기</button>
+	<hr>
+	<img alt="" src="../images/bear.jpg" id="img">
+	<hr>
+	<p>안녕하세요</p>
+	
+	
+	<script type="text/javascript">
+	
+	$("#btn1").on("click", function(){
+		// 지연시간 : default(400), fast(200), slow(600)
+		//$("#img").hide();
+		//$("#img").hide(200);
+		//$("#img").hide(600);
+		$("#img").hide(1200);
+	})
+	$("#btn2").on("click", function(){
+		$("#img").show(1200);
+	})
+	$("#btn3").on("click", function(){
+		$("#img").toggle(1200);
+	})
+	</script>
+	
+	
+	
+	
+	
+	
+	
+
+</body>
+</html>

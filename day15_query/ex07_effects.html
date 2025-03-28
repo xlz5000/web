@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>animate</title>
+<style type="text/css">
+	.block{
+		position: absolute;
+		background-color: skyblue;
+		width: 100px;
+		height: 100px;
+		margin: 5px;
+		left: 10px;
+	
+	}
+
+
+</style>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+	<button id="left">&laquo;</button>
+	<button id="right">&raquo;</button>
+	<div class="block" id="block"></div>
+	
+	
+	<script type="text/javascript">
+		$("#right").on("click", function(){
+			$(".block").animate({
+			
+				"left":"+=100px"
+		}, 3000);
+		});
+		$("#left").on("click", function(){
+			$(".block").animate({
+			
+				"left":"-=100px"
+		}, 3000);
+		});
+		
+		$("#block").on("click",function(){
+			//애니메이션 중지
+			$("#box").stop();
+		});
+		
+	
+	
+	</script>
+
+</body>
+</html>

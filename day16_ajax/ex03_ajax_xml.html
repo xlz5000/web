@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>xml 파일 내용 읽기</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style type="text/css">
+table{
+	width: 600px; margin-top: 50px; border-collapse: collapse;
+}
+
+table, th, td{
+	border: 1px solid green;
+	text-align:  center;
+
+
+}
+
+
+</style>
+</head>
+<body>
+
+
+	<div id="btn">가져오기</div>
+	<div id="result"></div>
+	<script type="text/javascript">
+		$("#btn").on("click", function(){
+			
+			// 초기화
+			
+			$("#result").empty();
+			$.ajax({
+				url: "data02.xml",
+				method:"post",
+				// data:
+				dataType: "xml",
+				success: function(response){
+					//alert("가져오기 성공");
+					console.log(response);
+					let table= "<table>";
+					
+					table += "<thead>";
+					table += "<tr>";
+					table += "<th>상품명</th><th>가격</th>"
+					table += "</tr>";
+					table += "</thead>";
+					table += "<tbody>";
+					
+					// find 찾기
+					$(response).find("product").each(function(){
+						let name = $(this).attr("name");
+						let count = $(this).attr("count");
+						table += "<tr>";
+						table += "<td>" + name + "</td>";
+						table += "<td>" + count + "</td>";
+						table += "</tr>";
+					});
+					
+					
+					
+					table += "</tbody>";
+					table += "</table>";
+					$("#result").append(table);
+					
+				},
+				error:function(){
+					
+					alert("가져오기 실패");
+				}
+				
+				
+			})
+		});
+		
+		
+	
+	</script>
+
+</body>
+</html>

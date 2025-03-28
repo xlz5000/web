@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>animate</title>
+<style type="text/css">
+#mydiv {
+	width: 100px;
+	height: 100px;
+	background-color: tomato;
+}
+</style>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<button id="btn">div늘리기</button>
+	<button id="btn2">div줄이기</button>
+	<button id="btn3">div늘리기,줄이기</button>
+	<div id="mydiv"></div>
+
+	<script type="text/javascript">
+	// $("선택자").animate({스타일 속성}, 적용시간[, 가속도, 콜백함수]);
+	// 콜백함수는 해당 애니메이션 실행효과가 100% 완료된 후 실행된다.
+	$("#btn").on("click", function(){
+		$("#mydiv").animate({
+			
+			width: "250px",
+			height:"250px"
+		}, 3000, function(){
+			alert("늘리기 성공");
+			
+		});
+		
+		
+	});
+	$("#btn2").on("click", function(){
+		$("#mydiv").animate({
+			
+			width: "100px",
+			height:"100px"
+		}, 3000, function(){
+			alert("줄이기 성공");
+			
+		});
+		
+		
+	});
+	
+ 	let i = 0;
+	$("#btn3").on("click", function(){
+		if(i++%2==0){
+			$("#mydiv").animate({
+				
+				width: "250px",
+				height:"250px",	
+				
+			}, 3000, function(){
+				alert("줄이기 성공");
+				
+			});
+		}else{
+			$("#mydiv").animate({
+						
+						width: "100px",
+						height:"100px",	
+						
+					}, 3000, function(){
+						alert("줄이기 성공");
+						
+					});
+		
+	}
+		 
+	});
+
+	
+	</script>
+
+</body>
+</html>
